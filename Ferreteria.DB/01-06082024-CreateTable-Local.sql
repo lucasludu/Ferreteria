@@ -1,0 +1,10 @@
+IF NOT EXISTS (SELECT 1 FROM SYS.tables WHERE name LIKE '[dbo].[Local]')
+BEGIN
+	CREATE TABLE [dbo].[Local] (
+		Id INT IDENTITY(1,1),
+		Nombre VARCHAR(50) NOT NULL,
+		Direccion VARCHAR(50) NOT NULL,
+		Telefono VARCHAR(50),
+		CONSTRAINT pk_Local PRIMARY KEY (Id)
+	);
+END
