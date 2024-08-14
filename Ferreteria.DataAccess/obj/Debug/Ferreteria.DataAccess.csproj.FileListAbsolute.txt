@@ -1,0 +1,15 @@
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\Ferreteria.DataAccess.dll.config
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\Ferreteria.DataAccess.dll
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\Ferreteria.DataAccess.pdb
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\Ferreteria.Models.dll
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\Ferreteria.Models.pdb
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\obj\Debug\Ferreteria.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\obj\Debug\Ferreteria.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\obj\Debug\Ferreter.2A237EB4.Up2Date
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\obj\Debug\Ferreteria.DataAccess.dll
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\obj\Debug\Ferreteria.DataAccess.pdb
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.DataAccess\bin\Debug\Ferreteria.Models.dll.config

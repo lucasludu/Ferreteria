@@ -36,11 +36,11 @@ namespace Ferreteria.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Articulo> Articuloes { get; set; }
+        public virtual DbSet<Articulo> Articulos { get; set; }
         public virtual DbSet<Categoria> Categorias { get; set; }
-        public virtual DbSet<Empleado> Empleadoes { get; set; }
-        public virtual DbSet<Local> Locals { get; set; }
-        public virtual DbSet<Puesto> Puestoes { get; set; }
+        public virtual DbSet<Empleado> Empleados { get; set; }
+        public virtual DbSet<Local> Locales { get; set; }
+        public virtual DbSet<Puesto> Puestos { get; set; }
         public virtual DbSet<Venta> Ventas { get; set; }
     }
 }

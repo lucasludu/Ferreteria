@@ -1,0 +1,12 @@
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\bin\Debug\Ferreteria.Models.dll
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\bin\Debug\Ferreteria.Models.pdb
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\obj\Debug\Ferreteria.Models.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\obj\Debug\Ferreteria.Models.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\obj\Debug\Ferreteria.Models.dll
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\obj\Debug\Ferreteria.Models.pdb
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\bin\Debug\Ferreteria.Models.dll.config
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\bin\Debug\EntityFramework.dll
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\bin\Debug\EntityFramework.xml
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.Models\obj\Debug\Ferreter.36DCA27A.Up2Date

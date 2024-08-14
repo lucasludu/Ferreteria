@@ -52,9 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FContext.cs" />
+    <Compile Include="Connection\FContext.cs" />
+    <Compile Include="LocalNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StringConnection.cs" />
+    <Compile Include="Connection\StringConnection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -64,6 +65,10 @@
     <ProjectReference Include="..\Ferreteria.DataAccess\Ferreteria.DataAccess.csproj">
       <Project>{D05046DC-7658-4D16-AFFC-B16CEE772697}</Project>
       <Name>Ferreteria.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ferreteria.Models\Ferreteria.Models.csproj">
+      <Project>{2C593BD7-F030-43E0-B287-AC7D011B7E54}</Project>
+      <Name>Ferreteria.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

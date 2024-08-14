@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Ferreteria.View.Abm;
+using Ferreteria.View.Menu;
+using System;
 using System.Windows.Forms;
 
 namespace Ferreteria.View
@@ -16,7 +15,7 @@ namespace Ferreteria.View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmMenuPpal());
         }
     }
 }
