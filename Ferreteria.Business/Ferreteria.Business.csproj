@@ -53,9 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\FContext.cs" />
+    <Compile Include="EmpleadoNegocio.cs" />
     <Compile Include="LocalNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Connection\StringConnection.cs" />
+    <Compile Include="PuestoNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

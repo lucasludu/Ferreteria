@@ -57,7 +57,10 @@
     <Compile Include="Categoria.cs">
       <DependentUpon>FModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTOs\EmpleadoDto.cs" />
+    <Compile Include="DTOs\RegisterDto.cs" />
     <Compile Include="DTOs\LocalDto.cs" />
+    <Compile Include="DTOs\LoginDto.cs" />
     <Compile Include="Empleado.cs">
       <DependentUpon>FModel.tt</DependentUpon>
     </Compile>
@@ -70,7 +73,9 @@
       <DependentUpon>FModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Mapper\AutoMapperProfile.cs" />
+    <Compile Include="Partial\Empleado.cs" />
     <Compile Include="Partial\Local.cs" />
+    <Compile Include="Partial\Puesto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Puesto.cs">
       <DependentUpon>FModel.tt</DependentUpon>

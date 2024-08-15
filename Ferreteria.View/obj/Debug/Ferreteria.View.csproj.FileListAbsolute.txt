@@ -46,3 +46,5 @@ C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\DocumentForma
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\DocumentFormat.OpenXml.Framework.xml
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\KellermanSoftware.Compare-NET-Objects.dll
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Auth.FrmLogin.resources
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Auth.FrmRegistroUsuario.resources

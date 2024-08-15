@@ -1,4 +1,5 @@
 ﻿using Ferreteria.View.Abm;
+using Ferreteria.View.Auth;
 using Ferreteria.View.Menu;
 using System;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace Ferreteria.View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMenuPpal());
+            Application.Run(new FrmLogin());
         }
     }
 }

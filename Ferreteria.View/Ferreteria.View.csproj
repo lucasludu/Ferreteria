@@ -103,6 +103,18 @@
     <Compile Include="Abm\FrmAbmLocal.Designer.cs">
       <DependentUpon>FrmAbmLocal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Auth\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auth\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\FrmRegistroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auth\FrmRegistroUsuario.Designer.cs">
+      <DependentUpon>FrmRegistroUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta\FrmConsultaLocal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +141,12 @@
     <EmbeddedResource Include="Abm\FrmAbmLocal.resx">
       <DependentUpon>FrmAbmLocal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Auth\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auth\FrmRegistroUsuario.resx">
+      <DependentUpon>FrmRegistroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consulta\FrmConsultaLocal.resx">
       <DependentUpon>FrmConsultaLocal.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,7 +168,10 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Ferreteria.Models.Articulo.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.Categoria.datasource" />
+    <None Include="Properties\DataSources\Ferreteria.Models.DTOs.EmpleadoDto.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.DTOs.LocalDto.datasource" />
+    <None Include="Properties\DataSources\Ferreteria.Models.DTOs.LoginDto.datasource" />
+    <None Include="Properties\DataSources\Ferreteria.Models.DTOs.RegisterDto.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.Empleado.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.Local.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.Puesto.datasource" />
@@ -182,6 +203,8 @@
     <Content Include="Utiles\Pictures\archivo-csv.png" />
     <Content Include="Utiles\Pictures\ArrowDown.png" />
     <Content Include="Utiles\Pictures\Excel.bmp" />
+    <Content Include="Utiles\Pictures\Gear.png" />
+    <Content Include="Utiles\Pictures\GoIn.jpg" />
     <Content Include="Utiles\Pictures\GoOut.png" />
     <Content Include="Utiles\Pictures\Plus.png" />
     <Content Include="Utiles\Pictures\Refresh.png" />

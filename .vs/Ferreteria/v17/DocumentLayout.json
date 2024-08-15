@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\menu\\frmmenuppal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\menu\\frmmenuppal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C593BD7-F030-43E0-B287-AC7D011B7E54}|Ferreteria.Models\\Ferreteria.Models.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.models\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C593BD7-F030-43E0-B287-AC7D011B7E54}|Ferreteria.Models\\Ferreteria.Models.csproj|solutionrelative:ferreteria.models\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\auth\\frmregistrousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\auth\\frmregistrousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\auth\\frmregistrousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\auth\\frmregistrousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\menu\\frmmenuppal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\menu\\frmmenuppal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF687FE0-DF70-4C1B-857F-726EA4683BC7}|Ferreteria.Business\\Ferreteria.Business.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.business\\empleadonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF687FE0-DF70-4C1B-857F-726EA4683BC7}|Ferreteria.Business\\Ferreteria.Business.csproj|solutionrelative:ferreteria.business\\empleadonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +51,82 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmRegistroUsuario.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Auth\\FrmRegistroUsuario.cs",
+              "RelativeDocumentMoniker": "Ferreteria.View\\Auth\\FrmRegistroUsuario.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Auth\\FrmRegistroUsuario.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Ferreteria.View\\Auth\\FrmRegistroUsuario.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T00:16:05.108Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmpleadoNegocio.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.Business\\EmpleadoNegocio.cs",
+              "RelativeDocumentMoniker": "Ferreteria.Business\\EmpleadoNegocio.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.Business\\EmpleadoNegocio.cs",
+              "RelativeToolTip": "Ferreteria.Business\\EmpleadoNegocio.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAowDcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T22:52:34.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmRegistroUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Auth\\FrmRegistroUsuario.cs",
+              "RelativeDocumentMoniker": "Ferreteria.View\\Auth\\FrmRegistroUsuario.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Auth\\FrmRegistroUsuario.cs",
+              "RelativeToolTip": "Ferreteria.View\\Auth\\FrmRegistroUsuario.cs",
+              "ViewState": "AQIAACMAAAAwMzMzMzMbwDwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T22:50:19.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.Models\\Mapper\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "Ferreteria.Models\\Mapper\\AutoMapperProfile.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.Models\\Mapper\\AutoMapperProfile.cs",
+              "RelativeToolTip": "Ferreteria.Models\\Mapper\\AutoMapperProfile.cs",
+              "ViewState": "AQIAAAQAAABAMzMzMzMrwFcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T22:48:40.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmMenuPpal.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "RelativeDocumentMoniker": "Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "RelativeToolTip": "Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAACYAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T21:08:44.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmMenuPpal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "RelativeDocumentMoniker": "Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Menu\\FrmMenuPpal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Ferreteria.View\\Menu\\FrmMenuPpal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T20:55:42.949Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

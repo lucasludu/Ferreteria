@@ -19,6 +19,12 @@ namespace Ferreteria.Models
             this.Telefono = telefono;
         }
 
+        public Local(int id, string nombre)
+        {
+            this.Id = id;
+            this.Nombre = nombre;
+        }
+
         
         public Local Clone()
         {
