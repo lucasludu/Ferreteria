@@ -7,6 +7,8 @@ namespace Ferreteria.Models.Mapper
     public static class AutoMapperProfile
     {
 
+        #region LOCAL
+
         #region Local --> LocalDto
 
         public static LocalDto LocalToLocalDto(Local local)
@@ -43,6 +45,9 @@ namespace Ferreteria.Models.Mapper
 
         #endregion
 
+        #endregion
+
+        #region Empleado
 
         #region Empleado --> RegisterDto
 
@@ -61,7 +66,7 @@ namespace Ferreteria.Models.Mapper
 
         #region RegisterDto --> Empleado
 
-        public static Empleado RegisterDtoToEmpledo(RegisterDto registerDto) 
+        public static Empleado RegisterDtoToEmpledo(RegisterDto registerDto)
         {
             return new Empleado(
                     registerDto.Nombre,
@@ -102,6 +107,42 @@ namespace Ferreteria.Models.Mapper
 
         #endregion
 
+        #endregion
+
+        #region Articulo
+
+        #region ArticuloInsertDto --> Articulo
+
+        public static Articulo ArticuloInsertDtoToArticulo (ArticuloInsertDto dto)
+        {
+            return new Articulo(
+                    dto.Nombre,
+                    dto.Descripcion,
+                    dto.Precio,
+                    dto.Stock,
+                    (int)dto.CategoriaId
+                );
+        }
+
+        #endregion
+
+
+        #region Articulo --> ArticuloInsertDto
+
+        public static ArticuloInsertDto ArticuloToArticuloInsertDto (Articulo articulo)
+        {
+            return new ArticuloInsertDto(
+                    articulo.Nombre, 
+                    articulo.Descripcion,
+                    articulo.Precio,
+                    articulo.Stock,
+                    (int)articulo.CategoriaId
+                );
+        }
+
+        #endregion
+
+        #endregion
 
     }
 }

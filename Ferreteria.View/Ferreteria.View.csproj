@@ -97,6 +97,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abm\FrmAbmArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm\FrmAbmArticulo.Designer.cs">
+      <DependentUpon>FrmAbmArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm\FrmAbmLocal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,12 @@
     <Compile Include="Auth\FrmRegistroUsuario.Designer.cs">
       <DependentUpon>FrmRegistroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta\FrmConsultaArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\FrmConsultaArticulo.Designer.cs">
+      <DependentUpon>FrmConsultaArticulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consulta\FrmConsultaLocal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +156,9 @@
     <Compile Include="Utiles\ExcelUtil.cs" />
     <Compile Include="Utiles\ExtendedBindingList.cs" />
     <Compile Include="Utiles\SortableBindingList.cs" />
+    <EmbeddedResource Include="Abm\FrmAbmArticulo.resx">
+      <DependentUpon>FrmAbmArticulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Abm\FrmAbmLocal.resx">
       <DependentUpon>FrmAbmLocal.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +192,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Ferreteria.Models.Articulo.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.Categoria.datasource" />
+    <None Include="Properties\DataSources\Ferreteria.Models.DTOs.ArticuloDto.datasource" />
+    <None Include="Properties\DataSources\Ferreteria.Models.DTOs.ArticuloInsertDto.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.DTOs.EmpleadoDto.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.DTOs.LocalDto.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.DTOs.LoginDto.datasource" />

@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\menu\\frmmenuppal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\menu\\frmmenuppal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\menu\\frmmenuppal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\menu\\frmmenuppal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +35,31 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmMenuPpal.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "RelativeDocumentMoniker": "Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "RelativeToolTip": "Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "ViewState": "AQIAADEAAADAMzMzMzMrwB8AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T23:32:15.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmMenuPpal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "RelativeDocumentMoniker": "Ferreteria.View\\Menu\\FrmMenuPpal.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Menu\\FrmMenuPpal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Ferreteria.View\\Menu\\FrmMenuPpal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T23:32:12.442Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

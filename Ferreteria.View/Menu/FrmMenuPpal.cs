@@ -25,17 +25,11 @@ namespace Ferreteria.View.Menu
                 var emp = new EmpleadoNegocio().GetDto(empleado.Correo);
                 bsEmpleado.DataSource = emp;
 
-                if(emp.Puesto.Equals("Administrador"))
-                {
-                    btnFrmLocal.Enabled = true;
-                    btnFrmCategoria.Enabled = true;
-                    btnFrmArticulo.Enabled = true;
-                    btnFrmVenta.Enabled = true;
-                }
-                else
+                if(emp.Puesto.Equals("Empleado"))
                 {
                     btnFrmLocal.Enabled = false;
                     btnFrmCategoria.Enabled = false;
+                    btnFrmEmpleados.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -79,6 +73,12 @@ namespace Ferreteria.View.Menu
         {
             var frmCategoria = new FrmCategoria();
             frmCategoria.ShowDialog();
+        }
+
+        private void btnFrmArticulo_Click(object sender, EventArgs e)
+        {
+            var frmArticulo = new FrmConsultaArticulo();
+            frmArticulo.ShowDialog();
         }
     }
 }

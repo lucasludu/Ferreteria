@@ -169,6 +169,7 @@
             this.btnFrmArticulo.TabIndex = 3;
             this.btnFrmArticulo.Text = "Articulo";
             this.btnFrmArticulo.UseVisualStyleBackColor = true;
+            this.btnFrmArticulo.Click += new System.EventHandler(this.btnFrmArticulo_Click);
             // 
             // btnFrmVenta
             // 
