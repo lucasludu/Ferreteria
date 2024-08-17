@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPpal));
             this.btnFrmLocal = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnModificarRegistro = new System.Windows.Forms.Button();
             this.lblNombreLocal = new System.Windows.Forms.Label();
             this.bsEmpleado = new System.Windows.Forms.BindingSource(this.components);
             this.lblRolEmpleado = new System.Windows.Forms.Label();
@@ -41,38 +41,35 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnModificarRegistro = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.btnFrmCategoria = new System.Windows.Forms.Button();
+            this.btnFrmArticulo = new System.Windows.Forms.Button();
+            this.btnFrmVenta = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnFrmEmpleados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmpleado)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFrmLocal
             // 
-            this.btnFrmLocal.Location = new System.Drawing.Point(306, 86);
+            this.btnFrmLocal.Location = new System.Drawing.Point(218, 158);
             this.btnFrmLocal.Name = "btnFrmLocal";
-            this.btnFrmLocal.Size = new System.Drawing.Size(75, 23);
+            this.btnFrmLocal.Size = new System.Drawing.Size(252, 30);
             this.btnFrmLocal.TabIndex = 0;
             this.btnFrmLocal.Text = "Local";
             this.btnFrmLocal.UseVisualStyleBackColor = true;
             this.btnFrmLocal.Click += new System.EventHandler(this.btnFrmLocal_Click);
             // 
-            // groupBox1
+            // btnModificarRegistro
             // 
-            this.groupBox1.Controls.Add(this.btnModificarRegistro);
-            this.groupBox1.Controls.Add(this.lblNombreLocal);
-            this.groupBox1.Controls.Add(this.lblRolEmpleado);
-            this.groupBox1.Controls.Add(this.lblCorreo);
-            this.groupBox1.Controls.Add(this.lblNombreEmpleado);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 329);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Perfil";
+            this.btnModificarRegistro.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarRegistro.Image")));
+            this.btnModificarRegistro.Location = new System.Drawing.Point(174, 21);
+            this.btnModificarRegistro.Name = "btnModificarRegistro";
+            this.btnModificarRegistro.Size = new System.Drawing.Size(20, 20);
+            this.btnModificarRegistro.TabIndex = 2;
+            this.btnModificarRegistro.UseVisualStyleBackColor = true;
+            this.btnModificarRegistro.Click += new System.EventHandler(this.btnModificarRegistro_Click);
             // 
             // lblNombreLocal
             // 
@@ -154,30 +151,93 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
-            // btnModificarRegistro
+            // btnFrmCategoria
             // 
-            this.btnModificarRegistro.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarRegistro.Image")));
-            this.btnModificarRegistro.Location = new System.Drawing.Point(174, 21);
-            this.btnModificarRegistro.Name = "btnModificarRegistro";
-            this.btnModificarRegistro.Size = new System.Drawing.Size(20, 20);
-            this.btnModificarRegistro.TabIndex = 2;
-            this.btnModificarRegistro.UseVisualStyleBackColor = true;
-            this.btnModificarRegistro.Click += new System.EventHandler(this.btnModificarRegistro_Click);
+            this.btnFrmCategoria.Location = new System.Drawing.Point(218, 194);
+            this.btnFrmCategoria.Name = "btnFrmCategoria";
+            this.btnFrmCategoria.Size = new System.Drawing.Size(252, 30);
+            this.btnFrmCategoria.TabIndex = 2;
+            this.btnFrmCategoria.Text = "Categoria";
+            this.btnFrmCategoria.UseVisualStyleBackColor = true;
+            this.btnFrmCategoria.Click += new System.EventHandler(this.btnFrmCategoria_Click);
+            // 
+            // btnFrmArticulo
+            // 
+            this.btnFrmArticulo.Location = new System.Drawing.Point(218, 65);
+            this.btnFrmArticulo.Name = "btnFrmArticulo";
+            this.btnFrmArticulo.Size = new System.Drawing.Size(252, 30);
+            this.btnFrmArticulo.TabIndex = 3;
+            this.btnFrmArticulo.Text = "Articulo";
+            this.btnFrmArticulo.UseVisualStyleBackColor = true;
+            // 
+            // btnFrmVenta
+            // 
+            this.btnFrmVenta.Location = new System.Drawing.Point(218, 101);
+            this.btnFrmVenta.Name = "btnFrmVenta";
+            this.btnFrmVenta.Size = new System.Drawing.Size(252, 30);
+            this.btnFrmVenta.TabIndex = 4;
+            this.btnFrmVenta.Text = "Venta";
+            this.btnFrmVenta.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnModificarRegistro);
+            this.groupBox1.Controls.Add(this.lblNombreLocal);
+            this.groupBox1.Controls.Add(this.lblRolEmpleado);
+            this.groupBox1.Controls.Add(this.lblCorreo);
+            this.groupBox1.Controls.Add(this.lblNombreEmpleado);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 279);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Perfil";
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(430, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 40);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnFrmEmpleados
+            // 
+            this.btnFrmEmpleados.Location = new System.Drawing.Point(218, 230);
+            this.btnFrmEmpleados.Name = "btnFrmEmpleados";
+            this.btnFrmEmpleados.Size = new System.Drawing.Size(252, 30);
+            this.btnFrmEmpleados.TabIndex = 6;
+            this.btnFrmEmpleados.Text = "Empleados";
+            this.btnFrmEmpleados.UseVisualStyleBackColor = true;
             // 
             // FrmMenuPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 353);
+            this.ClientSize = new System.Drawing.Size(482, 303);
+            this.Controls.Add(this.btnFrmEmpleados);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnFrmVenta);
+            this.Controls.Add(this.btnFrmArticulo);
+            this.Controls.Add(this.btnFrmCategoria);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnFrmLocal);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Navy;
+            this.MaximumSize = new System.Drawing.Size(500, 350);
+            this.MinimumSize = new System.Drawing.Size(500, 350);
             this.Name = "FrmMenuPpal";
             this.Text = "Menú Principal";
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmpleado)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsEmpleado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,7 +245,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnFrmLocal;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -196,5 +255,11 @@
         private System.Windows.Forms.Label lblNombreEmpleado;
         private System.Windows.Forms.BindingSource bsEmpleado;
         private System.Windows.Forms.Button btnModificarRegistro;
+        private System.Windows.Forms.Button btnFrmCategoria;
+        private System.Windows.Forms.Button btnFrmArticulo;
+        private System.Windows.Forms.Button btnFrmVenta;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnFrmEmpleados;
     }
 }

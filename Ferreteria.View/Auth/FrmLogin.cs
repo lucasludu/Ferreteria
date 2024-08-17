@@ -49,7 +49,7 @@ namespace Ferreteria.View.Auth
 
         private void btnRegistrarUsuario_Click(object sender, EventArgs e)
         {
-            var frmRegistrarUsuario = new FrmRegistroUsuario();
+            var frmRegistrarUsuario = new FrmRegistroUsuario(null);
             frmRegistrarUsuario.ShowDialog();
         }
     }

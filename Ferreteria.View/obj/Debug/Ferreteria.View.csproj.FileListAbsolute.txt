@@ -48,3 +48,4 @@ C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\KellermanSoft
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Auth.FrmLogin.resources
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Auth.FrmRegistroUsuario.resources
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Abm.FrmCategoria.resources

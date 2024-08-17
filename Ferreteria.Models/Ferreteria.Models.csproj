@@ -73,6 +73,7 @@
       <DependentUpon>FModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Mapper\AutoMapperProfile.cs" />
+    <Compile Include="Partial\Categoria.cs" />
     <Compile Include="Partial\Empleado.cs" />
     <Compile Include="Partial\Local.cs" />
     <Compile Include="Partial\Puesto.cs" />

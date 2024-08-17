@@ -103,6 +103,12 @@
     <Compile Include="Abm\FrmAbmLocal.Designer.cs">
       <DependentUpon>FrmAbmLocal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm\FrmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm\FrmCategoria.Designer.cs">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auth\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     <Compile Include="Utiles\SortableBindingList.cs" />
     <EmbeddedResource Include="Abm\FrmAbmLocal.resx">
       <DependentUpon>FrmAbmLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm\FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Auth\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

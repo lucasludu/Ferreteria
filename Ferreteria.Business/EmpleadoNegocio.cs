@@ -57,7 +57,7 @@ namespace Ferreteria.Business
 
         public bool Save(Empleado empleado, EntityState state)
         {
-            var existe = this.GetById(empleado.Id);
+            var existe = this.GetByCondition(e => e.Id == empleado.Id);
 
             if(existe != null)
             {
@@ -74,6 +74,11 @@ namespace Ferreteria.Business
         public bool Insert(Empleado empleado)
         {
             return this.Save(empleado, EntityState.Added);
+        }
+
+        public bool Update(Empleado empleado)
+        {
+            return this.Save(empleado, EntityState.Modified);
         }
 
     }

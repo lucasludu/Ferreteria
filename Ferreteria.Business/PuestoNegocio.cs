@@ -1,9 +1,6 @@
 ﻿using Ferreteria.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ferreteria.Business
 {
@@ -12,6 +9,11 @@ namespace Ferreteria.Business
         public List<Puesto> GetAll()
         {
             return this.Context.Puestos.ToList();
+        }
+
+        public Puesto GetById(int id)
+        {
+            return this.Context.Puestos.Where(a => a.Id == id).FirstOrDefault();
         }
     }
 }
