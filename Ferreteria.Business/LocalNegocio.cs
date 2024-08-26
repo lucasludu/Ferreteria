@@ -1,5 +1,4 @@
 ﻿using Ferreteria.Models;
-using Ferreteria.Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

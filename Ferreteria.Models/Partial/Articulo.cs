@@ -22,5 +22,17 @@ namespace Ferreteria.Models
         {
             this.Id = id;
         }
+
+        public Articulo Clone()
+        {
+            return new Articulo (
+                    Id = this.Id,
+                    Nombre = this.Nombre,
+                    Descripcion = this.Descripcion,
+                    Precio = this.Precio,
+                    Stock = this.Stock,
+                    (int)(CategoriaId = this.CategoriaId)
+                );
+        }
     }
 }

@@ -27,6 +27,12 @@ namespace Ferreteria.Business
             return this.Context.Categorias.Where(condition).FirstOrDefault();
         }
 
+        public bool ExisteCategoria(Expression<Func<Categoria, bool>> expression)
+        {
+            return this.Context.Categorias
+                .Any(expression);
+        }
+
 
         public bool Save(Categoria categoria, EntityState state)
         {

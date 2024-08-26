@@ -1,7 +1,9 @@
 ﻿using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using ExcelDataReader;
 using System;
+using System.Data;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -150,6 +152,23 @@ namespace Ferreteria.View.Utiles
         }
 
         #endregion
+
+
+
+        public static DataTable ReadExcelFile(string filePath)
+        {
+            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+            {
+                using (var reader = ExcelReaderFactory.CreateReader(stream))
+                {
+                    var result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                    {
+                        ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
+                    });
+                    return result.Tables[0];
+                }
+            }
+        }
 
     }
 }

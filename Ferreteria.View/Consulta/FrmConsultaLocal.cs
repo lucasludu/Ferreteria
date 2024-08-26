@@ -1,4 +1,5 @@
 ﻿using Ferreteria.Business;
+using Ferreteria.Models;
 using Ferreteria.Models.DTOs;
 using Ferreteria.Models.Mapper;
 using Ferreteria.View.Abm;
@@ -21,10 +22,10 @@ namespace Ferreteria.View.Consulta
 
         private void FrmConsultaLocal_Load(object sender, EventArgs e)
         {
-            //bsLocales.DataSource = new List<LocalDto>();
             bsLocales.DataSource = new ExtendedBindingList<LocalDto>();
             lblCantRegistros.Text = bsLocales.List.Count.ToString();
 
+            gbxFilter.Enabled = false;
             btnExcel.Enabled = false;
         }
 
@@ -32,8 +33,22 @@ namespace Ferreteria.View.Consulta
 
         #region Eventos
         
+        #region TXT
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            if (bsLocales.List.Count >= 0)
+            {
+                gbxFilter.Enabled = true;
+                Filter();
+                lblCantRegistros.Text = bsLocales.List.Count.ToString();
+            }
+        }
+
+        #endregion
+
         #region Botones
-        
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -56,12 +71,10 @@ namespace Ferreteria.View.Consulta
         {
             try
             {
-                var listaLocales = new LocalNegocio().GetAll();
-                var dtoList = AutoMapperProfile.ListLocalToListLocalDto(listaLocales);
-                var lista = new ExtendedBindingList<LocalDto>(dtoList);
-                bsLocales.DataSource = lista;
-                lblCantRegistros.Text = listaLocales.Count.ToString();
+                bsLocales.DataSource = this.GetList();
+                lblCantRegistros.Text = bsLocales.List.Count.ToString();
 
+                gbxFilter.Enabled = true;
                 btnExcel.Enabled = true;
             }
             catch (Exception ex)
@@ -163,6 +176,37 @@ namespace Ferreteria.View.Consulta
         #endregion
 
         #endregion
-        
+
+        #region MÉTODOS PRIVADOS
+
+        private void Filter()
+        {
+            var lista = this.GetList();
+            var filtro = txtFilter.Text.ToLower();
+
+            Predicate<LocalDto> predicate = l =>
+                string.IsNullOrEmpty(filtro) ||
+                l.Nombre.ToLower().Contains(filtro) ||
+                l.Direccion.ToLower().Contains(filtro) ||
+                l.Telefono.ToLower().Contains(filtro);
+
+            var listaFiltrada = (new List<LocalDto>(lista)).FindAll(predicate);
+
+            bsLocales.DataSource = string.IsNullOrEmpty(filtro)
+                ? lista
+                : new ExtendedBindingList<LocalDto>(listaFiltrada);
+
+            bsLocales.ResetBindings(false);
+        }
+
+        private ExtendedBindingList<LocalDto> GetList()
+        {
+            var listaLocales = new LocalNegocio().GetAll();
+            var dtoList = AutoMapperProfile.ListLocalToListLocalDto(listaLocales);
+            return new ExtendedBindingList<LocalDto>(dtoList);
+        }
+
+        #endregion
+
     }
 }

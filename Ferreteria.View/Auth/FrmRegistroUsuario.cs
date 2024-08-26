@@ -77,8 +77,7 @@ namespace Ferreteria.View.Auth
             {
                 if (registerDto == null)
                 {
-                    var existeRegistro = negocio.GetByCondition(a => a.Correo.Equals(registroBs.Correo));
-                    if (existeRegistro == null)
+                    if (negocio.ExisteEmpleado(a => a.Correo.Equals(registroBs.Correo)))
                     {
                         if (registroBs.Password.Equals(txtConfirmPassword.Text))
                         {

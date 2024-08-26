@@ -1,7 +1,6 @@
 ﻿using Ferreteria.Models;
 using Ferreteria.Models.DTOs;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
@@ -23,6 +22,12 @@ namespace Ferreteria.Business
             return this.Context.Empleados
                 .Where(a => a.Id == id)
                 .FirstOrDefault();
+        }
+
+        public bool ExisteEmpleado(Expression<Func<Empleado, bool>> expression)
+        {
+            return this.Context.Empleados
+                .Any(expression);
         }
 
         public EmpleadoDto GetDto(string correo)

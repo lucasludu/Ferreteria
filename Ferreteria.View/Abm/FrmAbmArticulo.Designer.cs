@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmArticulo));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.bsArticulo = new System.Windows.Forms.BindingSource(this.components);
+            this.bsCategoria = new System.Windows.Forms.BindingSource(this.components);
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,18 +44,16 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblMessage = new System.Windows.Forms.ToolStripStatusLabel();
-            this.bsArticulo = new System.Windows.Forms.BindingSource(this.components);
-            this.bsCategoria = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bsArticulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategoria)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsArticulo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,12 +70,21 @@
             this.cmbCategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsArticulo, "CategoriaId", true));
             this.cmbCategoria.DataSource = this.bsCategoria;
             this.cmbCategoria.DisplayMember = "Nombre";
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(120, 185);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(200, 24);
             this.cmbCategoria.TabIndex = 1;
             this.cmbCategoria.ValueMember = "Id";
+            // 
+            // bsArticulo
+            // 
+            this.bsArticulo.DataSource = typeof(Ferreteria.Models.Articulo);
+            // 
+            // bsCategoria
+            // 
+            this.bsCategoria.DataSource = typeof(Ferreteria.Models.Categoria);
             // 
             // txtDescripcion
             // 
@@ -84,6 +93,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(200, 22);
             this.txtDescripcion.TabIndex = 2;
+            this.txtDescripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDescripcion_KeyDown);
             // 
             // label2
             // 
@@ -128,6 +138,7 @@
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(200, 22);
             this.txtStock.TabIndex = 7;
+            this.txtStock.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStock_KeyDown);
             // 
             // txtPrecio
             // 
@@ -136,14 +147,16 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(200, 22);
             this.txtPrecio.TabIndex = 8;
+            this.txtPrecio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrecio_KeyDown);
             // 
             // txtNombre
             // 
-            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCategoria, "Nombre", true));
+            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsArticulo, "Nombre", true));
             this.txtNombre.Location = new System.Drawing.Point(120, 25);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 22);
             this.txtNombre.TabIndex = 9;
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
             // groupBox1
             // 
@@ -179,16 +192,15 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             // 
-            // statusStrip1
+            // lblTitle
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblMessage});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 351);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(382, 22);
-            this.statusStrip1.TabIndex = 11;
-            this.statusStrip1.Text = "statusStrip1";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblTitle.Location = new System.Drawing.Point(18, 37);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(0, 29);
+            this.lblTitle.TabIndex = 10;
             // 
             // btnClose
             // 
@@ -210,15 +222,16 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lblTitle
+            // statusStrip1
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTitle.Location = new System.Drawing.Point(18, 37);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(0, 29);
-            this.lblTitle.TabIndex = 10;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblMessage});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 351);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(382, 22);
+            this.statusStrip1.TabIndex = 11;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // lblMessage
             // 
@@ -226,14 +239,6 @@
             this.lblMessage.ForeColor = System.Drawing.Color.IndianRed;
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 16);
-            // 
-            // bsArticulo
-            // 
-            this.bsArticulo.DataSource = typeof(Ferreteria.Models.DTOs.ArticuloInsertDto);
-            // 
-            // bsCategoria
-            // 
-            this.bsCategoria.DataSource = typeof(Ferreteria.Models.Categoria);
             // 
             // FrmAbmArticulo
             // 
@@ -245,15 +250,16 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAbmArticulo";
             this.Text = "ABM Articulo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAbmArticulo_FormClosing);
             this.Load += new System.EventHandler(this.FrmAbmArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bsArticulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategoria)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsArticulo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

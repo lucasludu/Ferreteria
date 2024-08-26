@@ -45,19 +45,23 @@
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvColEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.gbxEvents = new System.Windows.Forms.GroupBox();
+            this.gbxFilter = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             this.btnShow = new System.Windows.Forms.Button();
             this.stripMessage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsLocales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLocal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocales)).BeginInit();
             this.gbxEvents.SuspendLayout();
+            this.gbxFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(566, 37);
+            this.btnAdd.Location = new System.Drawing.Point(197, 37);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(40, 40);
             this.btnAdd.TabIndex = 0;
@@ -68,7 +72,7 @@
             // 
             this.btnClean.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClean.Image = ((System.Drawing.Image)(resources.GetObject("btnClean.Image")));
-            this.btnClean.Location = new System.Drawing.Point(520, 37);
+            this.btnClean.Location = new System.Drawing.Point(151, 37);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(40, 40);
             this.btnClean.TabIndex = 2;
@@ -80,7 +84,7 @@
             this.btnExcel.AccessibleDescription = "";
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(378, 37);
+            this.btnExcel.Location = new System.Drawing.Point(9, 37);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(40, 40);
             this.btnExcel.TabIndex = 3;
@@ -91,7 +95,7 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(612, 37);
+            this.btnClose.Location = new System.Drawing.Point(243, 37);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(40, 40);
             this.btnClose.TabIndex = 4;
@@ -207,18 +211,46 @@
             this.gbxEvents.Controls.Add(this.btnAdd);
             this.gbxEvents.Controls.Add(this.btnExcel);
             this.gbxEvents.Controls.Add(this.btnClose);
-            this.gbxEvents.Location = new System.Drawing.Point(12, 12);
+            this.gbxEvents.Location = new System.Drawing.Point(381, 12);
             this.gbxEvents.Name = "gbxEvents";
-            this.gbxEvents.Size = new System.Drawing.Size(658, 100);
+            this.gbxEvents.Size = new System.Drawing.Size(289, 100);
             this.gbxEvents.TabIndex = 7;
             this.gbxEvents.TabStop = false;
+            // 
+            // gbxFilter
+            // 
+            this.gbxFilter.Controls.Add(this.label2);
+            this.gbxFilter.Controls.Add(this.txtFilter);
+            this.gbxFilter.Location = new System.Drawing.Point(12, 12);
+            this.gbxFilter.Name = "gbxFilter";
+            this.gbxFilter.Size = new System.Drawing.Size(363, 100);
+            this.gbxFilter.TabIndex = 17;
+            this.gbxFilter.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(6, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Filtrar por nombre";
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(6, 37);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(351, 22);
+            this.txtFilter.TabIndex = 15;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // btnShow
             // 
             this.btnShow.AccessibleName = "";
             this.btnShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnShow.Image = ((System.Drawing.Image)(resources.GetObject("btnShow.Image")));
-            this.btnShow.Location = new System.Drawing.Point(424, 37);
+            this.btnShow.Location = new System.Drawing.Point(55, 37);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(40, 40);
             this.btnShow.TabIndex = 5;
@@ -231,6 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 453);
+            this.Controls.Add(this.gbxFilter);
             this.Controls.Add(this.gbxEvents);
             this.Controls.Add(this.dgvLocales);
             this.Controls.Add(this.stripMessage);
@@ -245,6 +278,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsLocal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocales)).EndInit();
             this.gbxEvents.ResumeLayout(false);
+            this.gbxFilter.ResumeLayout(false);
+            this.gbxFilter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,6 +302,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn dgvColEliminar;
+        private System.Windows.Forms.GroupBox gbxFilter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Button btnShow;
     }
 }

@@ -7,6 +7,8 @@ namespace Ferreteria.View.Auth
 {
     public partial class FrmLogin : FrmBase
     {
+        #region CONSTRUCTOR | FORM
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -17,6 +19,10 @@ namespace Ferreteria.View.Auth
             bsLogin.DataSource = new LoginDto();
         }
 
+        #endregion
+
+        #region BOTONES
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -25,21 +31,17 @@ namespace Ferreteria.View.Auth
         private void btnLogin_Click(object sender, EventArgs e)
         {
             var loginBs = (LoginDto)bsLogin.Current;
+            var negocio = new EmpleadoNegocio();
             try
             {
-                var existeEmpleado = new EmpleadoNegocio()
-                    .GetByCondition(a => a.Correo.Equals(loginBs.Correo) && a.Password.Equals(loginBs.Password));
-
-                if(existeEmpleado != null)
+                if (negocio.ExisteEmpleado(a => a.Correo.Equals(loginBs.Correo) && a.Password.Equals(loginBs.Password)))
                 {
-                    var frmMenuPpal = new FrmMenuPpal(existeEmpleado);
-                    frmMenuPpal.ShowDialog();
+                    new FrmMenuPpal(negocio.GetByCondition(a => a.Correo.Equals(loginBs.Correo) && a.Password.Equals(loginBs.Password))).ShowDialog();
                 }
                 else
                 {
                     this.ShowPopupMessageError("Usuario Inexistente");
                 }
-
             }
             catch (Exception ex)
             {
@@ -49,8 +51,10 @@ namespace Ferreteria.View.Auth
 
         private void btnRegistrarUsuario_Click(object sender, EventArgs e)
         {
-            var frmRegistrarUsuario = new FrmRegistroUsuario(null);
-            frmRegistrarUsuario.ShowDialog();
+            new FrmRegistroUsuario(null).ShowDialog();
         }
+
+        #endregion
+
     }
 }

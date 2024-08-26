@@ -35,6 +35,7 @@
             this.bsCategorias = new System.Windows.Forms.BindingSource(this.components);
             this.bsCategoria = new System.Windows.Forms.BindingSource(this.components);
             this.gbxData = new System.Windows.Forms.GroupBox();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,13 +48,16 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblMessage = new System.Windows.Forms.Label();
+            this.gbxFilter = new System.Windows.Forms.GroupBox();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategoria)).BeginInit();
             this.gbxData.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gbxFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvCategorias
@@ -70,7 +74,7 @@
             this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn});
             this.dgvCategorias.DataSource = this.bsCategorias;
-            this.dgvCategorias.Location = new System.Drawing.Point(12, 92);
+            this.dgvCategorias.Location = new System.Drawing.Point(12, 168);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.RowHeadersVisible = false;
@@ -106,11 +110,20 @@
             this.gbxData.Controls.Add(this.txtNombre);
             this.gbxData.Controls.Add(this.btnSave);
             this.gbxData.Controls.Add(this.label1);
-            this.gbxData.Location = new System.Drawing.Point(12, 348);
+            this.gbxData.Location = new System.Drawing.Point(12, 424);
             this.gbxData.Name = "gbxData";
-            this.gbxData.Size = new System.Drawing.Size(343, 74);
+            this.gbxData.Size = new System.Drawing.Size(343, 70);
             this.gbxData.TabIndex = 1;
             this.gbxData.TabStop = false;
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblMessage.Location = new System.Drawing.Point(65, 45);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 16);
+            this.lblMessage.TabIndex = 9;
             // 
             // txtNombre
             // 
@@ -157,7 +170,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.lblCantidadRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 421);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 497);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(367, 26);
             this.statusStrip1.TabIndex = 10;
@@ -235,20 +248,40 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
-            // lblMessage
+            // gbxFilter
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblMessage.Location = new System.Drawing.Point(65, 45);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 16);
-            this.lblMessage.TabIndex = 9;
+            this.gbxFilter.Controls.Add(this.label2);
+            this.gbxFilter.Controls.Add(this.txtFilter);
+            this.gbxFilter.Location = new System.Drawing.Point(12, 92);
+            this.gbxFilter.Name = "gbxFilter";
+            this.gbxFilter.Size = new System.Drawing.Size(343, 70);
+            this.gbxFilter.TabIndex = 16;
+            this.gbxFilter.TabStop = false;
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(6, 21);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(331, 22);
+            this.txtFilter.TabIndex = 15;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(6, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 16);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Filtrar por nombre";
             // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 447);
+            this.ClientSize = new System.Drawing.Size(367, 523);
+            this.Controls.Add(this.gbxFilter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gbxData);
@@ -264,6 +297,8 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.gbxFilter.ResumeLayout(false);
+            this.gbxFilter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +324,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lblCantidadRegistros;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.GroupBox gbxFilter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtFilter;
     }
 }
