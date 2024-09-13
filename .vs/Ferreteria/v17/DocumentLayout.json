@@ -3,23 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\popup\\frmimportarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\popup\\frmimportarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\utiles\\excelutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\utiles\\excelutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|C:\\Users\\Usuario\\source\\repos\\Ferreteria\\ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\popup\\frmimportarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\popup\\frmimportarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|C:\\Users\\Usuario\\source\\repos\\Ferreteria\\ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,58 +38,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExcelUtil.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Utiles\\ExcelUtil.cs",
-              "RelativeDocumentMoniker": "Ferreteria.View\\Utiles\\ExcelUtil.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Utiles\\ExcelUtil.cs",
-              "RelativeToolTip": "Ferreteria.View\\Utiles\\ExcelUtil.cs",
-              "ViewState": "AQIAAAsAAABgMzMzMzMrwJ0AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T17:33:14.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmImportArticulo.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Popup\\FrmImportArticulo.cs",
-              "RelativeDocumentMoniker": "Ferreteria.View\\Popup\\FrmImportArticulo.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Popup\\FrmImportArticulo.cs",
-              "RelativeToolTip": "Ferreteria.View\\Popup\\FrmImportArticulo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAovT4AAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T17:14:36.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmImportArticulo.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Popup\\FrmImportArticulo.cs",
-              "RelativeDocumentMoniker": "Ferreteria.View\\Popup\\FrmImportArticulo.cs",
-              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Popup\\FrmImportArticulo.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Ferreteria.View\\Popup\\FrmImportArticulo.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T17:14:01.897Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "FrmConsultaArticulo.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",
               "RelativeDocumentMoniker": "Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",
               "RelativeToolTip": "Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",
-              "ViewState": "AQIAAEAAAAAAzczMzMwtwNsAAAAxAAAA",
+              "ViewState": "AQIAAGoAAAAAzMzMzMwtwOEAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T15:49:34.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "FrmConsultaArticulo.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",
               "RelativeDocumentMoniker": "Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",

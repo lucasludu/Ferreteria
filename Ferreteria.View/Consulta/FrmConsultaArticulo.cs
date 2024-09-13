@@ -26,8 +26,6 @@ namespace Ferreteria.View.Consulta
         {
             this.InicializaScreen();
 
-            bsArticulos.DataSource = new ExtendedBindingList<ArticuloDto>();
-            bsArticulo.DataSource = new ArticuloDto();
         }
 
         #endregion
@@ -79,6 +77,7 @@ namespace Ferreteria.View.Consulta
             bsArticulos.DataSource = this.GetList();
             lblCantidadRegistros.Text = bsArticulos.List.Count.ToString();
             btnExcel.Enabled = true;
+            gbxFilter.Enabled = true;
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
@@ -187,6 +186,8 @@ namespace Ferreteria.View.Consulta
         private void InicializaScreen()
         {
             bsArticulos.DataSource = new ExtendedBindingList<ArticuloDto>();
+            bsArticulo.DataSource = new ArticuloDto();
+
             lblCantidadRegistros.Text = string.Empty;
 
             gbxFilter.Enabled = false;
@@ -217,7 +218,13 @@ namespace Ferreteria.View.Consulta
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            new FrmImportArticulo().ShowDialog();
+            var frmImportArticulo = new FrmImportArticulo();
+            var result = frmImportArticulo.ShowDialog();
+
+            if(result == DialogResult.OK && frmImportArticulo._listaArticulo.Count > 0)
+            {
+                bsArticulos.DataSource = frmImportArticulo._listaArticulo;
+            }
         }
     }
 }

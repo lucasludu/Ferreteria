@@ -63,6 +63,12 @@ namespace Ferreteria.Business
             return this.Context.Articulos.Where(expression).FirstOrDefault();
         }
 
+        public bool ExisteArticulo(Expression<Func<Articulo, bool>> expression)
+        {
+            return this.Context.Articulos
+                .Any(expression);
+        }
+
         public bool Save(Articulo articulo, EntityState state)
         {
             var existe = this.GetByParams(a => a.Id == articulo.Id);
@@ -83,6 +89,45 @@ namespace Ferreteria.Business
         {
             return this.Save(articulo, EntityState.Added);
         }
+
+
+        public bool InsertAll(List<Articulo> articuloList)
+        {
+            var transaction = this.Context.Database.BeginTransaction();
+
+            try
+            {
+                foreach(var articulo in articuloList)
+                {
+                    var existe = this.GetByParams(a => a.Nombre.ToLower().Trim().Equals(articulo.Nombre.ToLower().Trim()));
+
+                    if(existe != null)
+                    {
+                        existe.Nombre = articulo.Nombre;
+                        existe.Descripcion = articulo.Descripcion;
+                        existe.Precio = articulo.Precio;
+                        existe.CategoriaId = articulo.CategoriaId;
+                        existe.Stock += articulo.Stock;
+
+                        this.Context.Entry(existe).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        this.Context.Articulos.Add(articulo);
+                    }
+                }
+                this.Context.SaveChanges();
+
+                transaction.Commit();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                throw;
+            }
+        }
+
 
         public bool Delete(Articulo articulo)
         {

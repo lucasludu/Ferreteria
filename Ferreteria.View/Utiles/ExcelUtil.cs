@@ -154,6 +154,7 @@ namespace Ferreteria.View.Utiles
         #endregion
 
 
+        #region Leer Archivo Excel
 
         public static DataTable ReadExcelFile(string filePath)
         {
@@ -169,6 +170,8 @@ namespace Ferreteria.View.Utiles
                 }
             }
         }
+
+        #endregion
 
     }
 }

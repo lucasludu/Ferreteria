@@ -34,17 +34,18 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblCantidadRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvImportArticulo = new System.Windows.Forms.DataGridView();
-            this.bsImportArticulos = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsImportArticulos = new System.Windows.Forms.BindingSource(this.components);
             this.btnFolder = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.ofdArticulos = new System.Windows.Forms.OpenFileDialog();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsImportArticulos)).BeginInit();
@@ -103,10 +104,6 @@
             this.dgvImportArticulo.Size = new System.Drawing.Size(776, 363);
             this.dgvImportArticulo.TabIndex = 1;
             // 
-            // bsImportArticulos
-            // 
-            this.bsImportArticulos.DataSource = typeof(Ferreteria.Models.DTOs.ArticuloDto);
-            // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -153,6 +150,10 @@
             this.categoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
             this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsImportArticulos
+            // 
+            this.bsImportArticulos.DataSource = typeof(Ferreteria.Models.DTOs.ArticuloDto);
             // 
             // btnFolder
             // 
@@ -204,11 +205,22 @@
             // 
             this.ofdArticulos.FileName = "ofdArticulos";
             // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblMessage.Location = new System.Drawing.Point(12, 21);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 20);
+            this.lblMessage.TabIndex = 11;
+            // 
             // FrmImportArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnClose);
@@ -244,5 +256,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.OpenFileDialog ofdArticulos;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

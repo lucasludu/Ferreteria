@@ -1,14 +1,19 @@
-﻿using Ferreteria.Models.DTOs;
+﻿using Ferreteria.Business;
+using Ferreteria.Models;
+using Ferreteria.Models.DTOs;
 using Ferreteria.View.Utiles;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ferreteria.View.Popup
 {
     public partial class FrmImportArticulo : FrmBase
     {
+        public List<Articulo> _listaArticulo { get; set; }
+
         public FrmImportArticulo()
         {
             InitializeComponent();
@@ -38,9 +43,38 @@ namespace Ferreteria.View.Popup
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
+            var listaDto = (ExtendedBindingList<ArticuloDto>)bsImportArticulos.List;
+            var lista = new List<Articulo>();
+            if (listaDto.Count > 0)
+            {
+                try
+                {
+                    
+                    foreach (var item in listaDto)
+                    {
+                        var articulo = new Articulo(item.Nombre, item.Descripcion, item.Precio, item.Stock, new CategoriaNegocio().GetByCondition(c => c.Nombre.Equals(item.Categoria)).Id);
 
+                        lista.Add(articulo);
+                    }
+
+                    lblMessage.Text = new ArticuloNegocio().InsertAll(lista)
+                        ? "Importado Exitosamente"
+                        : "No se pudo Importar la lista de articulos.";
+                }
+                catch (Exception ex)
+                {
+                    this.ShowPopupMessageError(ex.Message);
+                    throw;
+                }
+                finally
+                {
+                    _listaArticulo = lista;
+                    await Task.Delay(2000);
+                    this.Close();
+                }
+            }
         }
 
         private void Inicializar()
