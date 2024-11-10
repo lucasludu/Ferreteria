@@ -54,11 +54,16 @@ namespace Ferreteria.View.Popup
                     
                     foreach (var item in listaDto)
                     {
-                        var articulo = new Articulo(item.Nombre, item.Descripcion, item.Precio, item.Stock, new CategoriaNegocio().GetByCondition(c => c.Nombre.Equals(item.Categoria)).Id);
-
+                        var articulo = new Articulo (
+                            item.Nombre, 
+                            item.Precio, 
+                            item.Stock, 
+                            new CategoriaNegocio().GetByCondition(c => c.Nombre.Equals(item.Categoria)).Id,
+                            item.Marca,
+                            new ProveedorNegocio().GetByCondition(p => p.Nombre.Equals(item.Proveedor)).Id
+                        );
                         lista.Add(articulo);
                     }
-
                     lblMessage.Text = new ArticuloNegocio().InsertAll(lista)
                         ? "Importado Exitosamente"
                         : "No se pudo Importar la lista de articulos.";
@@ -94,15 +99,18 @@ namespace Ferreteria.View.Popup
                 var dto = new ArticuloDto
                 {
                     Nombre = row["Nombre"].ToString(),
-                    Descripcion = row["Descripcion"].ToString(),
                     Precio = Convert.ToDecimal(row["Precio"]),
                     Stock = Convert.ToInt32(row["Stock"]),
-                    Categoria = row["Categoria"].ToString()
+                    Categoria = row["Categoria"].ToString(),
+                    Marca = row["Marca"].ToString(),
+                    Proveedor = row["Proveedor"].ToString()
                 };
                 lista.Add(dto);
             }
 
-            bsImportArticulos.DataSource = new ExtendedBindingList<ArticuloDto>(lista);
+            var listaArticulos = new ExtendedBindingList<ArticuloDto>(lista);
+            bsImportArticulos.DataSource = listaArticulos;
+            lblCantidadRegistros.Text = listaArticulos.Count.ToString();
             btnSave.Visible = lista.Count > 0
                 ? true
                 : false;

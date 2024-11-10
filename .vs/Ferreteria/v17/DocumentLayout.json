@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|C:\\Users\\Usuario\\source\\repos\\Ferreteria\\ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|c:\\users\\usuario\\source\\repos\\ferreteria\\ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|C:\\Users\\Usuario\\source\\repos\\Ferreteria\\ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DB1D225F-7BAF-4F1F-BFC1-F6FBFD92ECCD}|Ferreteria.View\\Ferreteria.View.csproj|solutionrelative:ferreteria.view\\consulta\\frmconsultaarticulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C593BD7-F030-43E0-B287-AC7D011B7E54}|Ferreteria.Models\\Ferreteria.Models.csproj|C:\\Users\\Usuario\\source\\repos\\Ferreteria\\ferreteria.models\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C593BD7-F030-43E0-B287-AC7D011B7E54}|Ferreteria.Models\\Ferreteria.Models.csproj|solutionrelative:ferreteria.models\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,8 +21,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 312,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,15 +42,27 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Articulo.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.Models\\Articulo.cs",
+              "RelativeDocumentMoniker": "Ferreteria.Models\\Articulo.cs",
+              "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.Models\\Articulo.cs",
+              "RelativeToolTip": "Ferreteria.Models\\Articulo.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB0AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T23:41:08.318Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "FrmConsultaArticulo.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",
               "RelativeDocumentMoniker": "Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",
               "RelativeToolTip": "Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs",
-              "ViewState": "AQIAAGoAAAAAzMzMzMwtwOEAAAApAAAA",
+              "ViewState": "AQIAAN4AAACAzczMzMwswPcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T15:49:34.902Z",
+              "WhenOpened": "2024-11-08T15:15:00.433Z",
               "EditorCaption": ""
             },
             {
@@ -58,8 +74,7 @@
               "ToolTip": "C:\\Users\\Usuario\\source\\repos\\Ferreteria\\Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs [Dise\u00F1o]",
               "RelativeToolTip": "Ferreteria.View\\Consulta\\FrmConsultaArticulo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T15:48:37.88Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-08T18:31:20.19Z"
             }
           ]
         }

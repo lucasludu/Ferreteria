@@ -6,10 +6,12 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Marca" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Precio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="Stock" Type="int" Nullable="false" />
     <Property Name="CategoriaId" Type="int" />
+    <Property Name="ProveedorId" Type="int" />
+    <Property Name="Activo" Type="bit" />
   </EntityType>
   <EntityType Name="Categoria">
     <Key>
@@ -38,6 +40,22 @@
     <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Telefono" Type="varchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="MetodoPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Puesto">
     <Key>
       <PropertyRef Name="Id" />
@@ -55,6 +73,7 @@
     <Property Name="Importe" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="Unidad" Type="int" Nullable="false" />
     <Property Name="FechaVta" Type="datetime" />
+    <Property Name="MetodoPagoId" Type="int" />
   </EntityType>
   <Association Name="fk_articulo_Categoria">
     <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
@@ -65,6 +84,18 @@
       </Principal>
       <Dependent Role="Articulo">
         <PropertyRef Name="CategoriaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_articulo_proveedor">
+    <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+    <End Role="Articulo" Type="Self.Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Articulo">
+        <PropertyRef Name="ProveedorId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -116,15 +147,33 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_venta_metodopago">
+    <End Role="MetodoPago" Type="Self.MetodoPago" Multiplicity="0..1" />
+    <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetodoPago">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="MetodoPagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="FerreteriaModelStoreContainer">
     <EntitySet Name="Articulo" EntityType="Self.Articulo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Local" EntityType="Self.Local" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetodoPago" EntityType="Self.MetodoPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Puesto" EntityType="Self.Puesto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_articulo_Categoria" Association="Self.fk_articulo_Categoria">
       <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Articulo" EntitySet="Articulo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_articulo_proveedor" Association="Self.fk_articulo_proveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
       <End Role="Articulo" EntitySet="Articulo" />
     </AssociationSet>
     <AssociationSet Name="fk_Empleado_Local" Association="Self.fk_Empleado_Local">
@@ -141,6 +190,10 @@
     </AssociationSet>
     <AssociationSet Name="fk_Venta_Local" Association="Self.fk_Venta_Local">
       <End Role="Local" EntitySet="Local" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_venta_metodopago" Association="Self.fk_venta_metodopago">
+      <End Role="MetodoPago" EntitySet="MetodoPago" />
       <End Role="Venta" EntitySet="Venta" />
     </AssociationSet>
   </EntityContainer>

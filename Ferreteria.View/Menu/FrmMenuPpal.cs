@@ -1,7 +1,5 @@
 ﻿using Ferreteria.Business;
 using Ferreteria.Models;
-using Ferreteria.Models.Mapper;
-using Ferreteria.View.Abm;
 using Ferreteria.View.Auth;
 using Ferreteria.View.Consulta;
 using System;
@@ -23,6 +21,7 @@ namespace Ferreteria.View.Menu
             try
             {
                 var emp = new EmpleadoNegocio().GetDto(empleado.Correo);
+                emp.Local = string.IsNullOrEmpty(emp.Local) ? "-" : emp.Local; 
                 bsEmpleado.DataSource = emp;
 
                 if(emp.Puesto.Equals("Empleado"))
@@ -30,6 +29,7 @@ namespace Ferreteria.View.Menu
                     btnFrmLocal.Enabled = false;
                     btnFrmCategoria.Enabled = false;
                     btnFrmEmpleados.Enabled = false;
+                    btnProveedores.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -46,8 +46,7 @@ namespace Ferreteria.View.Menu
 
         private void btnModificarRegistro_Click(object sender, EventArgs e)
         {
-            var register = AutoMapperProfile.EmpleadoToRegisterDto(_Empleado);
-            var frmRegistro = new FrmRegistroUsuario(register);
+            var frmRegistro = new FrmRegistroUsuario(_Empleado);
             var result = frmRegistro.ShowDialog();
 
             if(result == DialogResult.Cancel)
@@ -71,7 +70,7 @@ namespace Ferreteria.View.Menu
 
         private void btnFrmCategoria_Click(object sender, EventArgs e)
         {
-            var frmCategoria = new FrmCategoria();
+            var frmCategoria = new FrmConsultaCategoria();
             frmCategoria.ShowDialog();
         }
 
@@ -79,6 +78,18 @@ namespace Ferreteria.View.Menu
         {
             var frmArticulo = new FrmConsultaArticulo();
             frmArticulo.ShowDialog();
+        }
+
+        private void btnFrmVenta_Click(object sender, EventArgs e)
+        {
+            var frmVenta = new FrmConsultaVenta();
+            frmVenta.ShowDialog();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            var frmProveedores = new FrmConsultaProveedor();
+            frmProveedores.ShowDialog();
         }
     }
 }

@@ -72,8 +72,8 @@ namespace Ferreteria.Models.Mapper
                     registerDto.Nombre,
                     registerDto.Correo,
                     registerDto.Password,
-                    registerDto.PuestoId,
-                    registerDto.LocalId
+                    (int)registerDto.PuestoId,
+                    (int)registerDto.LocalId
                 );
         }
 
@@ -117,10 +117,11 @@ namespace Ferreteria.Models.Mapper
         {
             return new Articulo(
                     dto.Nombre,
-                    dto.Descripcion,
                     dto.Precio,
                     dto.Stock,
-                    (int)dto.CategoriaId
+                    (int)dto.CategoriaId,
+                    dto.Marca,
+                    (int)dto.ProveedorId
                 );
         }
 
@@ -133,10 +134,43 @@ namespace Ferreteria.Models.Mapper
         {
             return new ArticuloInsertDto(
                     articulo.Nombre, 
-                    articulo.Descripcion,
                     articulo.Precio,
                     articulo.Stock,
-                    (int)articulo.CategoriaId
+                    (int)articulo.CategoriaId,
+                    articulo.Marca,
+                    (int)articulo.ProveedorId
+                );
+        }
+
+        #endregion
+
+        #endregion
+
+        #region VENTA
+
+        #region VentaInsertDto --> Venta
+
+        public static Venta VentaInsertDtoToVenta(VentaInsertDto dto)
+        {
+            return new Venta(
+                    dto.LocalId,
+                    dto.ArticuloId,
+                    dto.Importe,
+                    dto.Unidad
+                );
+        }
+
+        #endregion
+
+        #region Venta --> VentaInsertDto
+
+        public static VentaInsertDto VentaToVentaInsertDto(Venta venta)
+        {
+            return new VentaInsertDto(
+                    (int)venta.LocalId,
+                    (int)venta.ArticuloId,
+                    venta.Importe,
+                    venta.Unidad
                 );
         }
 

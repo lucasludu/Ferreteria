@@ -47,6 +47,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnFrmEmpleados = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmpleado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +83,7 @@
             // 
             // bsEmpleado
             // 
-            this.bsEmpleado.DataSource = typeof(Ferreteria.Models.DTOs.EmpleadoDto);
+            this.bsEmpleado.DataSource = typeof(Ferreteria.Models.Empleado);
             // 
             // lblRolEmpleado
             // 
@@ -179,6 +180,7 @@
             this.btnFrmVenta.TabIndex = 4;
             this.btnFrmVenta.Text = "Venta";
             this.btnFrmVenta.UseVisualStyleBackColor = true;
+            this.btnFrmVenta.Click += new System.EventHandler(this.btnFrmVenta_Click);
             // 
             // groupBox1
             // 
@@ -202,7 +204,7 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(430, 12);
+            this.btnClose.Location = new System.Drawing.Point(416, 15);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(40, 40);
             this.btnClose.TabIndex = 5;
@@ -218,11 +220,22 @@
             this.btnFrmEmpleados.Text = "Empleados";
             this.btnFrmEmpleados.UseVisualStyleBackColor = true;
             // 
+            // btnProveedores
+            // 
+            this.btnProveedores.Location = new System.Drawing.Point(218, 266);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(252, 30);
+            this.btnProveedores.TabIndex = 7;
+            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+            // 
             // FrmMenuPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 303);
+            this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnFrmEmpleados);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnFrmVenta);
@@ -262,5 +275,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnFrmEmpleados;
+        private System.Windows.Forms.Button btnProveedores;
     }
 }

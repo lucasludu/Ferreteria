@@ -1,6 +1,6 @@
-﻿namespace Ferreteria.View.Abm
+﻿namespace Ferreteria.View.Consulta
 {
-    partial class FrmCategoria
+    partial class FrmConsultaCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCategoria));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaCategoria));
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvColEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.bsCategorias = new System.Windows.Forms.BindingSource(this.components);
-            this.bsCategoria = new System.Windows.Forms.BindingSource(this.components);
-            this.gbxData = new System.Windows.Forms.GroupBox();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -49,15 +44,16 @@
             this.btnExcel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbxFilter = new System.Windows.Forms.GroupBox();
-            this.txtFilter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.bsCategoria = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategoria)).BeginInit();
-            this.gbxData.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbxFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvCategorias
@@ -72,17 +68,20 @@
             this.dgvCategorias.AutoGenerateColumns = false;
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreDataGridViewTextBoxColumn});
+            this.nombreDataGridViewTextBoxColumn,
+            this.dgvColEliminar});
             this.dgvCategorias.DataSource = this.bsCategorias;
-            this.dgvCategorias.Location = new System.Drawing.Point(12, 168);
+            this.dgvCategorias.Location = new System.Drawing.Point(12, 188);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.RowHeadersVisible = false;
             this.dgvCategorias.RowHeadersWidth = 51;
             this.dgvCategorias.RowTemplate.Height = 24;
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(343, 250);
+            this.dgvCategorias.Size = new System.Drawing.Size(342, 240);
             this.dgvCategorias.TabIndex = 0;
+            this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
+            this.dgvCategorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellDoubleClick);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -93,65 +92,19 @@
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // dgvColEliminar
+            // 
+            this.dgvColEliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvColEliminar.HeaderText = "";
+            this.dgvColEliminar.Image = ((System.Drawing.Image)(resources.GetObject("dgvColEliminar.Image")));
+            this.dgvColEliminar.MinimumWidth = 6;
+            this.dgvColEliminar.Name = "dgvColEliminar";
+            this.dgvColEliminar.ReadOnly = true;
+            this.dgvColEliminar.Width = 6;
+            // 
             // bsCategorias
             // 
             this.bsCategorias.DataSource = typeof(Ferreteria.Models.Categoria);
-            // 
-            // bsCategoria
-            // 
-            this.bsCategoria.AllowNew = true;
-            this.bsCategoria.DataSource = typeof(Ferreteria.Models.Categoria);
-            // 
-            // gbxData
-            // 
-            this.gbxData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbxData.Controls.Add(this.lblMessage);
-            this.gbxData.Controls.Add(this.txtNombre);
-            this.gbxData.Controls.Add(this.btnSave);
-            this.gbxData.Controls.Add(this.label1);
-            this.gbxData.Location = new System.Drawing.Point(12, 424);
-            this.gbxData.Name = "gbxData";
-            this.gbxData.Size = new System.Drawing.Size(343, 70);
-            this.gbxData.TabIndex = 1;
-            this.gbxData.TabStop = false;
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblMessage.Location = new System.Drawing.Point(65, 45);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 16);
-            this.lblMessage.TabIndex = 9;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCategoria, "Nombre", true));
-            this.txtNombre.Location = new System.Drawing.Point(68, 18);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 22);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(297, 21);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(40, 40);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
             // 
             // btnClose
             // 
@@ -170,9 +123,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.lblCantidadRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 497);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 431);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(367, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(366, 26);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -258,14 +211,6 @@
             this.gbxFilter.TabIndex = 16;
             this.gbxFilter.TabStop = false;
             // 
-            // txtFilter
-            // 
-            this.txtFilter.Location = new System.Drawing.Point(6, 21);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(331, 22);
-            this.txtFilter.TabIndex = 15;
-            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -276,29 +221,50 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Filtrar por nombre";
             // 
-            // FrmCategoria
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(6, 21);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(331, 22);
+            this.txtFilter.TabIndex = 15;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            // 
+            // bsCategoria
+            // 
+            this.bsCategoria.AllowNew = true;
+            this.bsCategoria.DataSource = typeof(Ferreteria.Models.Categoria);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(12, 165);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Doble Click para modificar";
+            // 
+            // FrmConsultaCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 523);
+            this.ClientSize = new System.Drawing.Size(366, 457);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gbxFilter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.gbxData);
             this.Controls.Add(this.dgvCategorias);
-            this.Name = "FrmCategoria";
+            this.Name = "FrmConsultaCategoria";
             this.Text = "Categoria";
             this.Load += new System.EventHandler(this.FrmCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCategoria)).EndInit();
-            this.gbxData.ResumeLayout(false);
-            this.gbxData.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.gbxFilter.ResumeLayout(false);
             this.gbxFilter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,13 +275,8 @@
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.BindingSource bsCategorias;
         private System.Windows.Forms.BindingSource bsCategoria;
-        private System.Windows.Forms.GroupBox gbxData;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button btnAdd;
@@ -323,9 +284,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lblCantidadRegistros;
-        private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.GroupBox gbxFilter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFilter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn dgvColEliminar;
+        private System.Windows.Forms.Label label1;
     }
 }

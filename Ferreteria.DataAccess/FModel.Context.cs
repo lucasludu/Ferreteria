@@ -42,5 +42,7 @@ namespace Ferreteria.Models
         public virtual DbSet<Local> Locales { get; set; }
         public virtual DbSet<Puesto> Puestos { get; set; }
         public virtual DbSet<Venta> Ventas { get; set; }
+        public virtual DbSet<MetodoPago> MetodoPagos { get; set; }
+        public virtual DbSet<Proveedor> Proveedores { get; set; }
     }
 }

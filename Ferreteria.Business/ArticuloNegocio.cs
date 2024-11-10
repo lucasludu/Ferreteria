@@ -3,6 +3,7 @@ using Ferreteria.Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -22,39 +23,65 @@ namespace Ferreteria.Business
                 .Join(Context.Categorias,
                     a => a.CategoriaId,
                     c => c.Id,
-                    (a, c) => new { a, c })
+                    (a, c) => new { a, c }
+                )
+                .Join(this.Context.Proveedores,
+                    ar => ar.a.ProveedorId,
+                    p => p.Id,
+                    (ar, p) => new {ar.a, ar.c, p}
+                )
                 .Select(ac => new
                 {
                     art = ac.a,
-                    nombreCategoria = ac.c.Nombre
+                    nombreCategoria = ac.c.Nombre,
+                    nombreProveedor = ac.p.Nombre
                 }).ToList();
             
             return query == null 
                 ? null 
-                : query.Select(a => new ArticuloDto(a.art.Nombre, a.art.Descripcion, a.art.Precio, a.art.Stock, a.nombreCategoria)).ToList();
+                : query.Select(a => new ArticuloDto(
+                    a.art.Nombre, 
+                    a.art.Precio, 
+                    a.art.Stock, 
+                    a.nombreCategoria,
+                    a.art.Marca,
+                    a.nombreProveedor,
+                    (bool)a.art.Activo)
+                )
+                .ToList();
         }
 
-        public ArticuloDto GetByConditionDto(Expression<Func<Articulo, bool>> expression)
+        public ArticuloDto GetByParamsDto(Expression<Func<Articulo, bool>> expression)
         {
             var query = this.Context.Articulos
                 .Where(expression)
                 .Join(Context.Categorias,
                     a => a.CategoriaId,
                     c => c.Id,
-                    (a, c) => new { Articulo = a, Categoria = c})
+                    (a, c) => new { a, c}
+                )
+                 .Join(this.Context.Proveedores,
+                    ar => ar.a.ProveedorId,
+                    p => p.Id,
+                    (ar, p) => new { ar.a, ar.c, p }
+                )
                 .Select(x => new
                 {
-                    a = x.Articulo,
-                    NombreCategoria = x.Categoria.Nombre
+                    art = x.a,
+                    NombreCategoria = x.c.Nombre,
+                    nombreProveedor = x.p.Nombre
                 })
                 .FirstOrDefault();
             return query != null 
-                ? new ArticuloDto(
-                    query.a.Nombre, 
-                    query.a.Descripcion, 
-                    query.a.Precio, 
-                    query.a.Stock, 
-                    query.NombreCategoria)
+                ? new ArticuloDto (
+                        query.art.Nombre, 
+                        query.art.Precio, 
+                        query.art.Stock, 
+                        query.NombreCategoria,
+                        query.art.Marca,
+                        query.nombreProveedor,
+                        (bool)query.art.Activo
+                    )
                 : null;
         }
 
@@ -62,6 +89,52 @@ namespace Ferreteria.Business
         {
             return this.Context.Articulos.Where(expression).FirstOrDefault();
         }
+
+        public List<Articulo> GetAllByParams(Expression<Func<Articulo, bool>> expression)
+        {
+            return this.Context.Articulos.Where(expression).ToList();
+        }
+
+        public List<ArticuloDto> GetAllDtoByCategoria(int idCategoria)
+        {
+            var query = this.Context.Articulos
+                .Join(Context.Categorias,
+                    a => a.CategoriaId,
+                    c => c.Id,
+                    (a, c) => new { a, c }
+                )
+                .Join(this.Context.Proveedores,
+                    ar => ar.a.ProveedorId,
+                    p => p.Id,
+                    (ar, p) => new { ar.a, ar.c, p }
+                )
+                .Where(x => idCategoria == 0 || x.c.Id == idCategoria)
+                .Select(x => new
+                {
+                    Nombre = x.a.Nombre,
+                    Precio = x.a.Precio,
+                    Stock = x.a.Stock,
+                    NombreCategoria = x.c.Nombre,
+                    NombreProveedor = x.p.Nombre,
+                    Marca = x.a.Marca,
+                    Activo = x.a.Activo
+                })
+                .ToList(); 
+
+            return 
+                query.Select(q => new ArticuloDto (
+                    q.Nombre,
+                    q.Precio,
+                    q.Stock,
+                    q.NombreCategoria,
+                    q.Marca,
+                    q.NombreProveedor,
+                    (bool)q.Activo
+                )).ToList();
+        }
+
+
+
 
         public bool ExisteArticulo(Expression<Func<Articulo, bool>> expression)
         {
@@ -104,7 +177,6 @@ namespace Ferreteria.Business
                     if(existe != null)
                     {
                         existe.Nombre = articulo.Nombre;
-                        existe.Descripcion = articulo.Descripcion;
                         existe.Precio = articulo.Precio;
                         existe.CategoriaId = articulo.CategoriaId;
                         existe.Stock += articulo.Stock;

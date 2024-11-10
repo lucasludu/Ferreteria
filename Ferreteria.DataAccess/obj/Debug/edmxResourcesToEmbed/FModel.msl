@@ -4,9 +4,11 @@
     <EntitySetMapping Name="Articuloes">
       <EntityTypeMapping TypeName="FerreteriaModel.Articulo">
         <MappingFragment StoreEntitySet="Articulo">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Precio" ColumnName="Precio" />
           <ScalarProperty Name="Stock" ColumnName="Stock" />
           <ScalarProperty Name="CategoriaId" ColumnName="CategoriaId" />
@@ -54,12 +56,31 @@
     <EntitySetMapping Name="Ventas">
       <EntityTypeMapping TypeName="FerreteriaModel.Venta">
         <MappingFragment StoreEntitySet="Venta">
+          <ScalarProperty Name="MetodoPagoId" ColumnName="MetodoPagoId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="LocalId" ColumnName="LocalId" />
           <ScalarProperty Name="ArticuloId" ColumnName="ArticuloId" />
           <ScalarProperty Name="Importe" ColumnName="Importe" />
           <ScalarProperty Name="Unidad" ColumnName="Unidad" />
           <ScalarProperty Name="FechaVta" ColumnName="FechaVta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MetodoPagoes">
+      <EntityTypeMapping TypeName="FerreteriaModel.MetodoPago">
+        <MappingFragment StoreEntitySet="MetodoPago">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedors">
+      <EntityTypeMapping TypeName="FerreteriaModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

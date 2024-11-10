@@ -20,8 +20,10 @@ namespace Ferreteria.Models
         public decimal Importe { get; set; }
         public int Unidad { get; set; }
         public Nullable<System.DateTime> FechaVta { get; set; }
+        public Nullable<int> MetodoPagoId { get; set; }
     
         public virtual Articulo Articulo { get; set; }
         public virtual Local Local { get; set; }
+        public virtual MetodoPago MetodoPago { get; set; }
     }
 }

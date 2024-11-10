@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ferreteria.Business
 {
@@ -58,6 +56,11 @@ namespace Ferreteria.Business
         public bool Update(Categoria categoria)
         {
             return this.Save(categoria, EntityState.Modified);
+        }
+
+        public bool Delete(Categoria categoria)
+        {
+            return this.Save(categoria, EntityState.Deleted);
         }
 
     }

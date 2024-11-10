@@ -1,7 +1,5 @@
 ﻿using Ferreteria.Business;
 using Ferreteria.Models;
-using Ferreteria.Models.DTOs;
-using Ferreteria.Models.Mapper;
 using System;
 using System.Data;
 using System.Linq;
@@ -12,9 +10,9 @@ namespace Ferreteria.View.Auth
 {
     public partial class FrmRegistroUsuario : FrmBase
     {
-        public RegisterDto registerDto { get; set; }
+        public Empleado registerDto { get; set; }
 
-        public FrmRegistroUsuario(RegisterDto registerDto)
+        public FrmRegistroUsuario(Empleado registerDto)
         {
             InitializeComponent();
 
@@ -36,13 +34,16 @@ namespace Ferreteria.View.Auth
                     var listaRoles = new PuestoNegocio().GetAll();
                     listaRoles.Add(new Puesto(0, "<< Seleccione un rol >>"));
                     bsRol.DataSource = listaRoles.OrderBy(r => r.Id).ToList();
-                    
-                    bsLocal.Position = negocioLocal.GetById(registerDto.LocalId).Id;
-                    bsRol.Position = negocioPuesto.GetById(registerDto.PuestoId).Id;
+
+                    if (registerDto.Local != null)
+                    {
+                        bsLocal.Position = negocioLocal.GetById((int)registerDto.LocalId).Id;
+                    }                    
+                    bsRol.Position = negocioPuesto.GetById((int)registerDto.PuestoId).Id;
                 }
                 else
                 {
-                    bsRegistroUsuario.DataSource = new RegisterDto();
+                    bsRegistroUsuario.DataSource = new Empleado();
 
                     var listaLocales = new LocalNegocio().GetAll();
                     listaLocales.Add(new Local(0, "<< Seleccione un local >>"));
@@ -59,11 +60,6 @@ namespace Ferreteria.View.Auth
             }
         }
 
-        private void FrmRegistroUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -71,17 +67,17 @@ namespace Ferreteria.View.Auth
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var registroBs = (RegisterDto)bsRegistroUsuario.Current;
+            var registroBs = (Empleado)bsRegistroUsuario.Current;
             var negocio = new EmpleadoNegocio();
             try
             {
                 if (registerDto == null)
                 {
-                    if (negocio.ExisteEmpleado(a => a.Correo.Equals(registroBs.Correo)))
+                    if (!negocio.ExisteEmpleado(a => a.Correo.Equals(registroBs.Correo)))
                     {
                         if (registroBs.Password.Equals(txtConfirmPassword.Text))
                         {
-                            lblMessage.Text = negocio.Insert(AutoMapperProfile.RegisterDtoToEmpledo(registroBs))
+                            lblMessage.Text = negocio.Insert(registroBs)
                                 ? "Registro exitoso"
                                 : "No se pudo ingresar el registro";
                         }

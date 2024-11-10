@@ -6,12 +6,15 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="Stock" Type="Int32" Nullable="false" />
     <Property Name="CategoriaId" Type="Int32" />
     <NavigationProperty Name="Categoria" Relationship="Self.fk_articulo_Categoria" FromRole="Articulo" ToRole="Categoria" />
     <NavigationProperty Name="Ventas" Relationship="Self.fk_Venta_Articulo" FromRole="Articulo" ToRole="Venta" />
+    <Property Name="Marca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProveedorId" Type="Int32" />
+    <Property Name="Activo" Type="Boolean" />
+    <NavigationProperty Name="Proveedor" Relationship="FerreteriaModel.fk_articulo_proveedor" FromRole="Articulo" ToRole="Proveedor" />
   </EntityType>
   <EntityType Name="Categoria">
     <Key>
@@ -65,6 +68,8 @@
     <Property Name="FechaVta" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Articulo" Relationship="Self.fk_Venta_Articulo" FromRole="Venta" ToRole="Articulo" />
     <NavigationProperty Name="Local" Relationship="Self.fk_Venta_Local" FromRole="Venta" ToRole="Local" />
+    <Property Name="MetodoPagoId" Type="Int32" />
+    <NavigationProperty Name="MetodoPago" Relationship="FerreteriaModel.fk_venta_metodopago" FromRole="Venta" ToRole="MetodoPago" />
   </EntityType>
   <Association Name="fk_articulo_Categoria">
     <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
@@ -153,5 +158,57 @@
       <End Role="Local" EntitySet="Locals" />
       <End Role="Venta" EntitySet="Ventas" />
     </AssociationSet>
+    <EntitySet Name="MetodoPagoes" EntityType="FerreteriaModel.MetodoPago" />
+    <EntitySet Name="Proveedors" EntityType="FerreteriaModel.Proveedor" />
+    <AssociationSet Name="fk_articulo_proveedor" Association="FerreteriaModel.fk_articulo_proveedor">
+      <End Role="Proveedor" EntitySet="Proveedors" />
+      <End Role="Articulo" EntitySet="Articuloes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_venta_metodopago" Association="FerreteriaModel.fk_venta_metodopago">
+      <End Role="MetodoPago" EntitySet="MetodoPagoes" />
+      <End Role="Venta" EntitySet="Ventas" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="MetodoPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Ventas" Relationship="FerreteriaModel.fk_venta_metodopago" FromRole="MetodoPago" ToRole="Venta" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Articuloes" Relationship="FerreteriaModel.fk_articulo_proveedor" FromRole="Proveedor" ToRole="Articulo" />
+  </EntityType>
+  <Association Name="fk_articulo_proveedor">
+    <End Type="FerreteriaModel.Proveedor" Role="Proveedor" Multiplicity="0..1" />
+    <End Type="FerreteriaModel.Articulo" Role="Articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Articulo">
+        <PropertyRef Name="ProveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_venta_metodopago">
+    <End Type="FerreteriaModel.MetodoPago" Role="MetodoPago" Multiplicity="0..1" />
+    <End Type="FerreteriaModel.Venta" Role="Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetodoPago">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="MetodoPagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -13,7 +13,7 @@ namespace Ferreteria.Models
             
         }
 
-        public Empleado(string nombre, string correo, string password, int idRol, int idLocal) : base()
+        public Empleado(string nombre, string correo, string password, int? idRol, int? idLocal) : base()
         {
             this.Nombre = nombre;
             this.Correo = correo;
@@ -22,7 +22,7 @@ namespace Ferreteria.Models
             this.LocalId = idLocal;
         }
 
-        public Empleado(int id, string nombre, string correo, string password, int idRol, int idLocal) 
+        public Empleado(int id, string nombre, string correo, string password, int? idRol, int? idLocal) 
             : this(nombre, correo, password, idRol, idLocal)
         {
             this.Id = id;

@@ -1,0 +1,6 @@
+IF EXISTS (SELECT 1 FROM SYS.TABLES WHERE NAME LIKE 'Venta')
+BEGIN
+	ALTER TABLE Venta ADD
+	MetodoPagoId INT,
+	CONSTRAINT fk_venta_metodopago FOREIGN KEY (MetodoPagoId) REFERENCES MetodoPago (Id);
+END

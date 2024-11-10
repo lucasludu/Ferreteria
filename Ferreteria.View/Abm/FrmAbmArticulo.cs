@@ -39,8 +39,6 @@ namespace Ferreteria.View.Abm
 
                 bsCategoria.Position = categoriaNegocio.GetByCondition(a => a.Id == articulo.CategoriaId).Id;
             }
-
-
         }
 
         private void FrmAbmArticulo_Load(object sender, EventArgs e)
@@ -51,8 +49,8 @@ namespace Ferreteria.View.Abm
         private void FrmAbmArticulo_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             DialogResult = _Articulo == null
-                ? System.Windows.Forms.DialogResult.Cancel
-                : System.Windows.Forms.DialogResult.OK;
+                ? DialogResult.Cancel
+                : DialogResult.OK;
         }
 
         #endregion

@@ -1,20 +1,19 @@
-﻿using ExcelDataReader;
-using Ferreteria.Business;
+﻿using Ferreteria.Business;
+using Ferreteria.Models;
 using Ferreteria.Models.DTOs;
 using Ferreteria.View.Abm;
 using Ferreteria.View.Popup;
 using Ferreteria.View.Utiles;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ferreteria.View.Consulta
 {
     public partial class FrmConsultaArticulo : FrmBase
     {
-
         #region Constructor | Frm
 
         public FrmConsultaArticulo()
@@ -65,43 +64,65 @@ namespace Ferreteria.View.Consulta
 
             if (result == DialogResult.OK && frmAddArticulo._Articulo != null)
             {
-                var dto = new ArticuloNegocio().GetByConditionDto(a => a.Id == frmAddArticulo._Articulo.Id);
+                var dto = new ArticuloNegocio().GetByParamsDto(a => a.Id == frmAddArticulo._Articulo.Id);
                 bsArticulos.Add(dto);
                 bsArticulos.ResetBindings(false);
                 lblCantidadRegistros.Text = bsArticulos.List.Count.ToString();
             }
         }
 
-        private void btnShow_Click(object sender, EventArgs e)
+        private async void btnShow_Click(object sender, EventArgs e)
         {
-            bsArticulos.DataSource = this.GetList();
-            lblCantidadRegistros.Text = bsArticulos.List.Count.ToString();
-            btnExcel.Enabled = true;
-            gbxFilter.Enabled = true;
+            var listaArticulos = this.GetList();
+            if (listaArticulos.Count > 0)
+            {
+                bsArticulos.DataSource = listaArticulos;
+                lblCantidadRegistros.Text = bsArticulos.List.Count.ToString();
+                btnExcel.Enabled = true;
+                gbxFilter.Enabled = true; 
+            }
+            else
+            {
+                lblMessage.Text = "No hay articulos ingresados.";
+                await Task.Delay(2000);
+                lblMessage.Text = string.Empty; 
+            }
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
-            //using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "CSV file|*.csv" })
+            this.ExportExcel(dgvArticulos);
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            var frmImportArticulo = new FrmImportArticulo();
+            var result = frmImportArticulo.ShowDialog();
+
+            if(result == DialogResult.OK && frmImportArticulo._listaArticulo.Count > 0)
             {
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        ExcelUtil.ExportDataGridViewToXlsx(dgvArticulos, sfd.FileName);
-                        this.ShowPopupMessageInfo("Exportación Excitosa.");
-                    }
-                    catch (Exception ex)
-                    {
-                        this.ShowPopupMessageError(ex.Message);
-                    }
-                }
+                bsArticulos.DataSource = frmImportArticulo._listaArticulo;
             }
         }
 
+        private void btnBuscaCategoria_Click(object sender, EventArgs e)
+        {
+            var negocio = new ArticuloNegocio();
 
-        
+            try
+            {
+                var listaArticulos = negocio.GetAllDtoByCategoria(((Categoria)bsCategorias.Current).Id);
+                if(listaArticulos.Count > 0)
+                {
+                    bsArticulos.DataSource = listaArticulos;
+                    lblCantidadRegistros.Text = bsArticulos.List.Count.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowPopupMessageError(ex.Message);
+            }
+        }
 
         #endregion
 
@@ -122,35 +143,32 @@ namespace Ferreteria.View.Consulta
 
                     if (result == DialogResult.OK && frmAbmArticulo._Articulo != null)
                     {
-                        bsArticulos[e.RowIndex] = negocio.GetByConditionDto(a => a.Id == frmAbmArticulo._Articulo.Id);
+                        bsArticulos[e.RowIndex] = negocio.GetByParamsDto(a => a.Id == frmAbmArticulo._Articulo.Id);
                         bsArticulos.ResetBindings(false);
                     }
                 }
             }
         }
 
-
         private void dgvArticulos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var negocio = new ArticuloNegocio();
             if (e.RowIndex >= 0)
             {
+                var articuloDto = (ArticuloDto)bsArticulos.Current;
+                var nombreArticulo = articuloDto.Nombre.ToLower().Trim();
+
+                #region Col-Eliminar
                 if (e.ColumnIndex == dgvColEliminar.Index)
                 {
-                    var articuloDto = (ArticuloDto)bsArticulos.Current;
-                    if (MessageBox.Show(
-                            $"¿Está seguro de eliminar el articulo {articuloDto.Nombre}?",
-                            "Eliminar",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Question
-                        ) == DialogResult.Yes)
+                    if (this.ConfirmarAccion($"¿Está seguro de eliminar el articulo {articuloDto.Nombre}?", "Eliminar"))
                     {
                         try
                         {
                             var articulo = negocio
-                                .GetByParams(a => a.Nombre.ToLower().Trim().Equals(articuloDto.Nombre.ToLower().Trim()));
+                                .GetByParams(a => a.Nombre.ToLower().Trim().Equals(nombreArticulo));
 
-                            if (negocio.Delete(articulo))
+                            if (articulo != null && negocio.Delete(articulo))
                             {
                                 this.ShowPopupMessageInfo($"El articulo {articulo.Nombre} fue eliminado");
                                 bsArticulos.Remove(articuloDto);
@@ -164,12 +182,70 @@ namespace Ferreteria.View.Consulta
                         }
                         catch (Exception ex)
                         {
-                            this.ShowPopupMessageError(ex.Message);
+                            this.ShowPopupMessageError($"Error al eliminar el archivo: {ex.Message}");
                         }
                     }
                 }
+                #endregion
+
+                #region Col-Baja
+                if (e.ColumnIndex == dgvActivo.Index)
+                {
+                    var estadoAnterior = articuloDto.Activo == true ? "Baja" : "Alta";
+                    if (this.ConfirmarAccion($"¿Está seguro de dar de {estadoAnterior} el articulo {articuloDto.Nombre}?", "Alta/Baja"))
+                    {
+                        try
+                        {
+                            var articulo = negocio
+                                .GetByParams(a => a.Nombre.ToLower().Trim().Equals(nombreArticulo));
+
+                            if (articulo != null)
+                            {
+                                articulo.Activo = !articulo.Activo;
+
+                                if (negocio.Update(articulo))
+                                {
+                                    var estado = articulo.Activo ? "Alta" : "Baja";
+                                    this.ShowPopupMessageInfo($"El articulo {articulo.Nombre} fue dado de {estado}");
+                                    bsArticulos.ResetBindings(false);
+                                    lblCantidadRegistros.Text = bsArticulos.List.Count.ToString();
+                                }
+                                else
+                                {
+                                    this.ShowPopupMessageError("No se pudo eliminar el articulo.");
+                                } 
+                            }
+                            else
+                            {
+                                ShowPopupMessageError("El artículo no se encontró en la base de datos.");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            ShowPopupMessageError($"Error al actualizar el estado del artículo: {ex.Message}");
+                        }
+                    }
+                }
+                #endregion
             }
         }
+
+        private void dgvArticulos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.RowIndex >= bsArticulos.Count)
+                return; // Salir si el índice de fila es inválido
+
+            var articuloItem = dgvArticulos.Rows[e.RowIndex].DataBoundItem as Articulo;
+            if (articuloItem != null && e.ColumnIndex == dgvActivo.Index)
+            {
+                if (!articuloItem.Activo)
+                {
+                    e.Value = null; // Quitar la imagen para artículos inactivos
+                    e.CellStyle.NullValue = null; // El valor nulo a mostrar en la celda
+                }
+            }
+        }
+
 
         #endregion
 
@@ -188,6 +264,10 @@ namespace Ferreteria.View.Consulta
             bsArticulos.DataSource = new ExtendedBindingList<ArticuloDto>();
             bsArticulo.DataSource = new ArticuloDto();
 
+            var listaCategorias = new CategoriaNegocio().GetAll();
+            listaCategorias.Add(new Categoria(0, "TODOS"));
+            bsCategorias.DataSource = listaCategorias.OrderBy(a => a.Id);
+
             lblCantidadRegistros.Text = string.Empty;
 
             gbxFilter.Enabled = false;
@@ -202,7 +282,7 @@ namespace Ferreteria.View.Consulta
             Predicate<ArticuloDto> predicate = a =>
                 string.IsNullOrEmpty(filtro) ||
                 a.Nombre.ToLower().Contains(filtro) ||
-                a.Descripcion.ToLower().Contains(filtro) ||
+                a.Marca.ToLower().Contains(filtro) ||
                 a.Categoria.ToLower().Contains(filtro);
 
             var listaFiltrada = (new List<ArticuloDto>(lista)).FindAll(predicate);
@@ -216,15 +296,6 @@ namespace Ferreteria.View.Consulta
 
         #endregion
 
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            var frmImportArticulo = new FrmImportArticulo();
-            var result = frmImportArticulo.ShowDialog();
 
-            if(result == DialogResult.OK && frmImportArticulo._listaArticulo.Count > 0)
-            {
-                bsArticulos.DataSource = frmImportArticulo._listaArticulo;
-            }
-        }
     }
 }

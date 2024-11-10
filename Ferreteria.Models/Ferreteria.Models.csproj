@@ -63,6 +63,8 @@
     <Compile Include="DTOs\RegisterDto.cs" />
     <Compile Include="DTOs\LocalDto.cs" />
     <Compile Include="DTOs\LoginDto.cs" />
+    <Compile Include="DTOs\VentaDto.cs" />
+    <Compile Include="DTOs\VentaInsertDto.cs" />
     <Compile Include="Empleado.cs">
       <DependentUpon>FModel.tt</DependentUpon>
     </Compile>
@@ -75,12 +77,20 @@
       <DependentUpon>FModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Mapper\AutoMapperProfile.cs" />
+    <Compile Include="MetodoPago.cs">
+      <DependentUpon>FModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Partial\Articulo.cs" />
     <Compile Include="Partial\Categoria.cs" />
     <Compile Include="Partial\Empleado.cs" />
     <Compile Include="Partial\Local.cs" />
+    <Compile Include="Partial\Proveedor.cs" />
     <Compile Include="Partial\Puesto.cs" />
+    <Compile Include="Partial\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs">
+      <DependentUpon>FModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Puesto.cs">
       <DependentUpon>FModel.tt</DependentUpon>
     </Compile>

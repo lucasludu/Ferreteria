@@ -16,6 +16,10 @@
         <AssociationConnector Association="FerreteriaModel.fk_Empleado_Local" ManuallyRouted="false" />
         <AssociationConnector Association="FerreteriaModel.fk_Empleado_Puesto" ManuallyRouted="false" />
         <AssociationConnector Association="FerreteriaModel.fk_Venta_Local" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FerreteriaModel.MetodoPago" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FerreteriaModel.Proveedor" Width="1.5" PointX="6.375" PointY="8.75" />
+        <AssociationConnector Association="FerreteriaModel.fk_articulo_proveedor" />
+        <AssociationConnector Association="FerreteriaModel.fk_venta_metodopago" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

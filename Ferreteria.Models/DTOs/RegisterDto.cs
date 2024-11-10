@@ -11,15 +11,15 @@ namespace Ferreteria.Models.DTOs
         public string Nombre { get; set; }
         public string Correo { get; set; }
         public string Password { get; set; }
-        public int PuestoId { get; set; }
-        public int LocalId { get; set; }
+        public Nullable<int> PuestoId { get; set; }
+        public Nullable<int> LocalId { get; set; }
 
         public RegisterDto()
         {
             
         }
 
-        public RegisterDto(string nombre, string correo, string password, int puestoId, int localId)
+        public RegisterDto(string nombre, string correo, string password, int? puestoId, int? localId)
         {
             this.Nombre = nombre;
             this.Correo = correo;

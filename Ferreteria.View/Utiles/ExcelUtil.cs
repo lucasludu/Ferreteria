@@ -26,7 +26,7 @@ namespace Ferreteria.View.Utiles
             {
                 csvContent.Append(dataGridView.Columns[i].HeaderText);
                 if (i < dataGridView.Columns.Count - 1)
-                    csvContent.Append(",");
+                    csvContent.Append(";");
             }
             csvContent.AppendLine();
 
@@ -35,9 +35,9 @@ namespace Ferreteria.View.Utiles
             {
                 for (int j = 0; j < dataGridView.Columns.Count; j++)
                 {
-                    csvContent.Append(dataGridView.Rows[i].Cells[j].Value?.ToString().Replace(",", " "));
+                    csvContent.Append(dataGridView.Rows[i].Cells[j].Value?.ToString().Replace(";", " "));
                     if (j < dataGridView.Columns.Count - 1)
-                        csvContent.Append(",");
+                        csvContent.Append(";");
                 }
                 csvContent.AppendLine();
             }

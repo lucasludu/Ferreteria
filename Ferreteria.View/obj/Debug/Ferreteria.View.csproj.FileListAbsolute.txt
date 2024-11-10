@@ -48,7 +48,6 @@ C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\KellermanSoft
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\KellermanSoftware.Compare-NET-Objects.xml
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Auth.FrmLogin.resources
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Auth.FrmRegistroUsuario.resources
-C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Abm.FrmCategoria.resources
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Abm.FrmAbmArticulo.resources
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Consulta.FrmConsultaArticulo.resources
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\ExcelDataReader.DataSet.dll
@@ -58,3 +57,9 @@ C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\ExcelDataRead
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\ExcelDataReader.DataSet.pdb
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\bin\Debug\ExcelDataReader.DataSet.xml
 C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Popup.FrmImportArticulo.resources
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Consulta.FrmConsultaVenta.resources
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Abm.FrmAbmVentas.resources
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Consulta.FrmConsultaCategoria.resources
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Abm.FrmAbmCategoria.resources
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Abm.FrmAbmProveedor.resources
+C:\Users\Usuario\source\repos\Ferreteria\Ferreteria.View\obj\Debug\Ferreteria.View.Consulta.FrmConsultaProveedor.resources

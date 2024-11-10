@@ -18,5 +18,14 @@ namespace Ferreteria.Models
             this.Id = id;
             this.Nombre = nombre;
         }
+
+        public Categoria Clone()
+        {
+            return new Categoria()
+            {
+                Id = this.Id,
+                Nombre = this.Nombre
+            };
+        }
     }
 }

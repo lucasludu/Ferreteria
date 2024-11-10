@@ -91,7 +91,7 @@
             // 
             // bsRegistroUsuario
             // 
-            this.bsRegistroUsuario.DataSource = typeof(Ferreteria.Models.DTOs.RegisterDto);
+            this.bsRegistroUsuario.DataSource = typeof(Ferreteria.Models.Empleado);
             // 
             // bsLocal
             // 
@@ -266,7 +266,6 @@
             this.MinimumSize = new System.Drawing.Size(400, 450);
             this.Name = "FrmRegistroUsuario";
             this.Text = "Registro de Usuario";
-            this.Load += new System.EventHandler(this.FrmRegistroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsRegistroUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLocal)).EndInit();
             this.statusStrip1.ResumeLayout(false);

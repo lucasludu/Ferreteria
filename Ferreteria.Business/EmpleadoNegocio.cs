@@ -33,21 +33,21 @@ namespace Ferreteria.Business
         public EmpleadoDto GetDto(string correo)
         {
             var empleadoData = Context.Empleados
-                .Join(Context.Locales,
-                    e => e.LocalId,
+                .GroupJoin(Context.Locales,
+                    e => (int?)e.LocalId,
                     l => l.Id,
-                    (e, l) => new { e, l })
+                    (e, locales) => new { e, locales = locales.FirstOrDefault() })
                 .Join(Context.Puestos,
-                    el => el.e.PuestoId,
+                    el => (int)el.e.PuestoId,
                     p => p.Id,
-                    (el, p) => new { el.e, el.l, p })
+                    (el, p) => new { el.e, el.locales, p })
                 .Where(ep => ep.e.Correo.Equals(correo))
                 .Select(ep => new
                 {
                     NombreEmpleado = ep.e.Nombre,
                     CorreoEmpleado = ep.e.Correo,
                     NombrePuesto = ep.p.Nombre,
-                    NombreLocal = ep.l.Nombre
+                    NombreLocal = ep.locales.Nombre
                 })
                 .FirstOrDefault();
 

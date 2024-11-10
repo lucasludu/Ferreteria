@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Ferreteria.View.Utiles;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ferreteria.View
@@ -15,6 +10,22 @@ namespace Ferreteria.View
         public FrmBase()
         {
             InitializeComponent();
+        }
+
+
+        /// <summary>
+        /// Actualizo el label
+        /// </summary>
+        /// <param name="label">Label</param>
+        /// <param name="message">Message</param>
+        /// <param name="color">Color</param>
+        public void ActualizarLabel(Label label, string message, Color color)
+        {
+            if (label != null)
+            {
+                label.Text = message;
+                label.ForeColor = color;
+            }
         }
 
         /// <summary>
@@ -35,9 +46,38 @@ namespace Ferreteria.View
             MessageBox.Show(message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        /// <summary>
+        /// Mensaje de aviso Yes/No
+        /// </summary>
+        /// <param name="message">Mensaje</param>
+        /// <param name="title">Titulo</param>
+        /// <returns></returns>
+        protected bool ConfirmarAccion(string message, string title)
+        {
+            return MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+        }
 
-
-
-
+        /// <summary>
+        /// Exporta la grilla a Excel
+        /// </summary>
+        /// <param name="dgv">Data Grid View</param>
+        protected void ExportExcel(DataGridView dgv)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        ExcelUtil.ExportDataGridViewToXlsx(dgv, sfd.FileName);
+                        this.ShowPopupMessageInfo("Exportación Excitosa.");
+                    }
+                    catch (Exception ex)
+                    {
+                        this.ShowPopupMessageError(ex.Message);
+                    }
+                }
+            }
+        }
     }
 }

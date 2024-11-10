@@ -110,17 +110,35 @@
     <Compile Include="Abm\FrmAbmArticulo.Designer.cs">
       <DependentUpon>FrmAbmArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm\FrmAbmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm\FrmAbmCategoria.Designer.cs">
+      <DependentUpon>FrmAbmCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm\FrmAbmLocal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Abm\FrmAbmLocal.Designer.cs">
       <DependentUpon>FrmAbmLocal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm\FrmCategoria.cs">
+    <Compile Include="Abm\FrmAbmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm\FrmCategoria.Designer.cs">
-      <DependentUpon>FrmCategoria.cs</DependentUpon>
+    <Compile Include="Abm\FrmAbmProveedor.Designer.cs">
+      <DependentUpon>FrmAbmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm\FrmAbmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm\FrmAbmVentas.Designer.cs">
+      <DependentUpon>FrmAbmVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\FrmConsultaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\FrmConsultaCategoria.Designer.cs">
+      <DependentUpon>FrmConsultaCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Auth\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -145,6 +163,18 @@
     </Compile>
     <Compile Include="Consulta\FrmConsultaLocal.Designer.cs">
       <DependentUpon>FrmConsultaLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\FrmConsultaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\FrmConsultaProveedor.Designer.cs">
+      <DependentUpon>FrmConsultaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\FrmConsultaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\FrmConsultaVenta.Designer.cs">
+      <DependentUpon>FrmConsultaVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBase.cs">
       <SubType>Form</SubType>
@@ -172,11 +202,20 @@
     <EmbeddedResource Include="Abm\FrmAbmArticulo.resx">
       <DependentUpon>FrmAbmArticulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Abm\FrmAbmCategoria.resx">
+      <DependentUpon>FrmAbmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Abm\FrmAbmLocal.resx">
       <DependentUpon>FrmAbmLocal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm\FrmCategoria.resx">
-      <DependentUpon>FrmCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="Abm\FrmAbmProveedor.resx">
+      <DependentUpon>FrmAbmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm\FrmAbmVentas.resx">
+      <DependentUpon>FrmAbmVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\FrmConsultaCategoria.resx">
+      <DependentUpon>FrmConsultaCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Auth\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -189,6 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\FrmConsultaLocal.resx">
       <DependentUpon>FrmConsultaLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\FrmConsultaProveedor.resx">
+      <DependentUpon>FrmConsultaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\FrmConsultaVenta.resx">
+      <DependentUpon>FrmConsultaVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>
@@ -217,8 +262,12 @@
     <None Include="Properties\DataSources\Ferreteria.Models.DTOs.LocalDto.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.DTOs.LoginDto.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.DTOs.RegisterDto.datasource" />
+    <None Include="Properties\DataSources\Ferreteria.Models.DTOs.VentaDto.datasource" />
+    <None Include="Properties\DataSources\Ferreteria.Models.DTOs.VentaInsertDto.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.Empleado.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.Local.datasource" />
+    <None Include="Properties\DataSources\Ferreteria.Models.MetodoPago.datasource" />
+    <None Include="Properties\DataSources\Ferreteria.Models.Proveedor.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.Puesto.datasource" />
     <None Include="Properties\DataSources\Ferreteria.Models.Venta.datasource" />
     <None Include="Properties\Settings.settings">
@@ -257,6 +306,7 @@
     <Content Include="Utiles\Pictures\Refresh.png" />
     <Content Include="Utiles\Pictures\Save.png" />
     <Content Include="Utiles\Pictures\Search.png" />
+    <Content Include="Utiles\Pictures\Search32.png" />
     <Content Include="Utiles\Pictures\Trash.png" />
   </ItemGroup>
   <ItemGroup />
